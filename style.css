@@ -1,0 +1,68 @@
+body {
+    position: relative;
+    min-width: 320px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000, 0 0 1em #000;
+    background-image: url(img/bg-3.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.header {
+    margin-bottom: 64px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__menu {
+    margin: 0 16px;
+}
+
+.header__menuItem {
+    margin: 0 8px;
+}
+
+.container {
+    width: 100%;
+    max-width: calc(1160px + 48px);
+    margin: 0 auto;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.box {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.bg {
+    backdrop-filter: blur(7px);
+    /* background-color: rgba(255,255,255,.4); */
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgb(0 0 0 / 80%);
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: #fff;
+}
+
+body pre.prettyprint {
+    display: inline-block;
+    padding: 24px 16px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-shadow: none;
+}
