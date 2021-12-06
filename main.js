@@ -29,8 +29,33 @@ let obj = {
         return this.name;
     },
 };
-//console.log( obj["Name space"] );
-//console.log( "name" in obj );
+
+
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+let personalMovieDB =  {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+};
+
+let answerLastFilm = prompt('Один из последних просмотренных фильмов');
+let answerLastFilmRating = prompt('на сколько оцените его?');
+
+personalMovieDB.movies[answerLastFilm] = answerLastFilmRating;
+
+
+// function questionLastFilm() {
+//     let answer = prompt('Один из последних просмотренных фильмов');
+//     return answer;
+// } 
+
+// function questionLastFilmRating() {
+//     let answer = prompt('на сколько оцените его?');
+//     return answer;
+// } 
 
 
 
@@ -46,7 +71,10 @@ let obj = {
 
 // Methods, Property, Event handlers
 let exampleCodeOne = function() {
-    let urlTablePriority = "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table"; // Приоритет операторов
+    // Приоритет операторов
+    let urlTablePriority = `
+    https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table`;
+
 
     // Когда функция содержится внутри объекта, она называется методом данного объекта
     // Function Declaration
