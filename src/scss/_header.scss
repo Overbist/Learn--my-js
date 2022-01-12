@@ -1,0 +1,19 @@
+.header {
+    margin-bottom: 64px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &__menu {
+        margin: 0 16px;
+    }
+    
+    &__menuItem {
+        margin: 0 8px;
+    }
+}
