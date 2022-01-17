@@ -173,14 +173,26 @@ let exampleCodeOne = function() {
     JSON.stringify(obj); // Превращяем объект в json формат
     JSON.parse(json); // Получаем объект с json
 
-    // ajax и общение с серверами
+    // ajax и общение с серверами 
     const request = new XMLHttpRequest();
     request.open('GET', 'js/current.json');
     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     request.send();
+    // npx json-server db.json // json-server db.json
+    // https://winnote.ru/security/160-windows-powershell-vypolnenie-scenariev-otklyucheno-v-etoy-sisteme.html
+
+    fetch('http://localhost:3000/menu') // интерфейс JavaScript для работы с запросами и ответами HTTP
+        .then(data => data.json()) // вместо XMLHttpRequest - https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch
+        .then(res => console.log(res)); 
 
     Promise.all([test(1000), test(2000)]); // ждет пока все выполнятся
     Promise.race([test(1000), test(2000)]); // выполняет когда уже первый промис выполнился
+
+    // localStorage https://tproger.ru/articles/localstorage/
+    localStorage.setItem('number', 5); // Записываем
+    localStorage.getItem('number'); // Получаем
+    localStorage.removeItem('number'); // удаляем ключь с значением
+    localStorage.clear(); // Очищяем localStorage
 
 
     // Property
@@ -285,16 +297,19 @@ let exampleCodeOne = function() {
     arr.join("delim"); // Объединить элементы массива в строку
     str.split("delim"); // разбивает строку на массив по заданному разделителю delim
 
-    arr.map(); // 
+    arr.map(item => item.toLowerCase()); // метод map возращяет новый масив
+    arr.some(item => typeof(item) === 'number'); // если в масиве хоть одно совпадение и выводит true or false
+    arr.every(item => typeof(item) === 'number'); // если в масиве все совпадают выводит true
     arr.sort(); // Сортирует как строки
 
     arr.find(); //
     arr.findIndex(); // 
-    arr.filter(); // 
+    arr.filter(name => {
+        return name.length < 5;
+    }); // фильтрует елементы внутри массива. И возращяет новый масив.
 
-    arr.reduce(); //
+    arr.reduce((sum, current) => sum + current); // схлопывать или собирать масив в одно эдиное целое. Метод перебора возращяет новый масив.
     arr.reduceRight(); // 
-
 
     new Map(); // – создаёт коллекцию.
     map.set(key, value); // – записывает по ключу key значение value.
@@ -304,7 +319,7 @@ let exampleCodeOne = function() {
     map.clear(); // – очищает коллекцию от всех элементов.
     map.size; // – возвращает текущее количество элементов.
 
-
+    // переберает масив, но не возращяет его
     arr.forEach(); // позволяет запускать функцию для каждого элемента массива
     arr.forEach(alert); // выведет на экран каждый элемент массива
 
@@ -327,6 +342,7 @@ let exampleCodeOne = function() {
     Object.keys(obj).length; // Получаем количество елементов в объекте
     Object.is(NaN, NaN) === true; // специальный метод Object.is, который сравнивает значения примерно как ===
     Object.setPrototypeOf(childObj, mainObj); // устанавливаем прототип доч. объекту
+    Object.entries(obj); // Возращяет масив с объекта
 
 
     /* === Dates === */
@@ -713,8 +729,8 @@ let exampleCodeTasks = function() {
                 inputUsd.value = "Что-то пошло не так";
             }
         });
-
     });
+    // fetch()
 
 
 
