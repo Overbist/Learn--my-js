@@ -98,6 +98,8 @@ let personalMovieDB = {
 
 
 
+
+
 let exampleCodeOne = function() {
 
     /*
@@ -170,6 +172,15 @@ let exampleCodeOne = function() {
 
     JSON.stringify(obj); // Превращяем объект в json формат
     JSON.parse(json); // Получаем объект с json
+
+    // ajax и общение с серверами
+    const request = new XMLHttpRequest();
+    request.open('GET', 'js/current.json');
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    request.send();
+
+    Promise.all([test(1000), test(2000)]); // ждет пока все выполнятся
+    Promise.race([test(1000), test(2000)]); // выполняет когда уже первый промис выполнился
 
 
     // Property
@@ -341,6 +352,12 @@ let exampleCodeOne = function() {
     onscroll; // Обработчик на скрол
     onchange; // При изменении
 
+    // addEventListener
+    input;
+    change; // когда уводим мышку с инпута
+    readystatechange; // отслеживает статус готовности нашего запроса на данный момент
+    load; //
+
     touchstart; // аналог клика для мобайла
     touchmove; // движение пальцем
     touchend; // отпускаем палец
@@ -471,8 +488,55 @@ let exampleCodeTwo = function() {
     const squareLong = new Rectangle(20, 100);
     console.log(square.calcArea());
     console.log(squareLong.calcArea());
-    
 
+
+    // ================================= //
+    // ========== Promise ============== //
+    // ================================= //
+    console.log('Запрос данных...');
+    const req = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('Подготовка данных...');
+
+            const product = {
+                name: 'TV',
+                price: 2000
+            };
+
+            resolve(product);
+        }, 2000);
+    });
+
+    req.then((product) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                product.status = 'order';
+                resolve(product);
+            }, 2000);
+        });
+    }).then(data => {
+        data.modify = true;
+        return data;
+    }).then(data => {
+        console.log(data);
+    }).catch(() => {
+        console.error('Произошла ошибка...');
+    }).finally(() => {
+        console.error('Finally');
+    });
+
+    // version 2
+    const test = time => {
+        return new Promise(resolve => {
+            setTimeout(() => resolve(), time);
+        });
+    };
+
+    test(1000).then(() => console.log('1000 ms'));
+    test(2000).then(() => console.log('2000 ms'));
+
+    Promise.all([test(1000), test(2000)]);
+    Promise.race([test(1000), test(2000)]);
     
 
     // ================================= //
@@ -629,6 +693,28 @@ let exampleCodeTasks = function() {
     // ===================
     // === Udemy Tasks ===
     // ===================
+
+    // Калькулятор
+    const inputRub = document.querySelector('#rub'),
+          inputUsd = document.querySelector('#usd');
+
+    inputRub.addEventListener('input', () => {
+        const request = new XMLHttpRequest();
+
+        request.open('GET', 'js/current.json');
+        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        request.send();
+
+        request.addEventListener('load', () => {
+            if (request.status === 200) {
+                const data = JSON.parse(request.response);
+                inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2);
+            } else {
+                inputUsd.value = "Что-то пошло не так";
+            }
+        });
+
+    });
 
 
 
