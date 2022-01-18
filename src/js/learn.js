@@ -195,6 +195,26 @@ let exampleCodeOne = function() {
     localStorage.clear(); // Очищяем localStorage
 
 
+    new RegExp('patten', 'flag'); // /pattern/f
+    const reg = /n/igm; //
+    const ans = prompt('Введите данные...');
+    // i - регистр
+    // g 
+    // m
+    
+    // \d ищем цифры
+    // \w ищем все буквы
+    // \s ищем все пробелы
+
+    // \D ищем НЕ цифры
+    // \W ищем все НЕ буквы
+    reg.test(ans); //
+    ans.match(reg); // ищем совпадения и возращяем в массиве.
+    ans.search(reg); //
+    ans.replace(reg, ''); // заменяем символы, можно регуляркой
+    
+
+
     // Property
     str.length; // Свойство содержит длину строки
     arr.length; // Свойство содержит длину массива
@@ -268,6 +288,7 @@ let exampleCodeOne = function() {
     str.slice(-5, -1); // вырезаем строку с конца
     str.substring(2, 5); // вырезаем строку, но без отрецательных значений
     str.substr(2, 5); // вырезаем строку, второе значение сколько вырезать
+    str.replace('', ''); // заменяем символы, можно регуляркой
 
     str[2]; // r
 
@@ -438,6 +459,67 @@ let exampleCodeTwo = function() {
     }
 
 
+    // ================================= //
+    // =========== cycles ============== //
+    // ================================= //
+    while (count < 10) {
+        console.log(count);
+        count++;
+    }
+
+    do {
+        console.log(count);
+        count++;
+    } while (count < 14);
+
+    for (let i = 0; i < 10; i++) {
+        if ( i === 7) {
+            break;
+            //continue; // оператор позволяет пропустить шаг и продолжить цикл
+        }
+
+        console.log( i );
+    }
+
+    
+    // for array
+    for (let i = 0; i < arr.length; i++) {
+        console.log( arr[i]*10 );
+    }
+    
+    for (let item of arr) { // for array. (for of)
+        console.log( item*10 );
+    }
+
+    for (let key in obj) { // for obj. (for in)
+        console.log( `Свойство ${key} имеет значение ${obj[key]}` );
+    }
+
+    arr.forEach(function(item, i, array) { // arr = [1];
+        console.log( item + " Индекс " + i ); // 1 Индекс 0
+    });
+
+    let newArr = arr.map(function(item) {
+        return item * 10;
+    });
+
+
+    // Next category
+    setTimeout( () => {
+        //clearTimeout()
+        console.log('After timeout');
+    }, 2500);
+
+    setInterval( () => {
+        console.log('Interval');
+    }, 1000);
+
+    const timerId = setTimeout(logger, 2000);
+    function logger() {
+        console.log('text');
+    }
+
+
     // ==================================== //
     // =========== functions ============== //
     // ==================================== //
@@ -468,6 +550,27 @@ let exampleCodeTwo = function() {
         return a - b;
     }
     arr.sort(compareNum);
+
+
+
+    // ==================================== //
+    // ======== Геттеры и сеттеры ========= //
+    // ==================================== //
+    const person = {
+        name: 'Alex',
+        age: 25,
+
+        get userAge() {
+            return this.age;
+        },
+
+        set userAge(num) {
+            this.age = num;
+        }
+    };
+    console.log(persone.userAge = 30);
+    console.log(persone.userAge);
+
 
 
     // ==================================== //
@@ -555,65 +658,21 @@ let exampleCodeTwo = function() {
     Promise.race([test(1000), test(2000)]);
     
 
+
     // ================================= //
-    // =========== cycles ============== //
+    // =========== Errors ============== //
     // ================================= //
-    while (count < 10) {
-        console.log(count);
-        count++;
+    try {
+        console.log('Normal');
+        console.log(a); // <= error this
+        console.log('result');
+    } catch(error) {
+        console.log(error);
+    } finally {
+        console.log('Final');
     }
+    console.log('Still normal');
 
-    do {
-        console.log(count);
-        count++;
-    } while (count < 14);
-
-    for (let i = 0; i < 10; i++) {
-        if ( i === 7) {
-            break;
-            //continue; // оператор позволяет пропустить шаг и продолжить цикл
-        }
-
-        console.log( i );
-    }
-
-
-    // for array
-    for (let i = 0; i < arr.length; i++) {
-        console.log( arr[i]*10 );
-    }
-    
-    for (let item of arr) { // for array. (for of)
-        console.log( item*10 );
-    }
-
-    for (let key in obj) { // for obj. (for in)
-        console.log( `Свойство ${key} имеет значение ${obj[key]}` );
-    }
-
-    arr.forEach(function(item, i, array) { // arr = [1];
-        console.log( item + " Индекс " + i ); // 1 Индекс 0
-    });
-
-    let newArr = arr.map(function(item) {
-        return item * 10;
-    });
-
-
-    // Next category
-    setTimeout( () => {
-        //clearTimeout()
-        console.log('After timeout');
-    }, 2500);
-
-    setInterval( () => {
-        console.log('Interval');
-    }, 1000);
-
-    const timerId = setTimeout(logger, 2000);
-    function logger() {
-        console.log('text');
-    }
 
 };
 
@@ -824,6 +883,16 @@ importCode(".js-code-import-3", exampleCodeTasks);
 // Чему равно 0 || "" || 2 || undefined || true || falsе
 
 
+// Стрелочные функции
+// Callback функции
+// Async, defer
+// setTimeout setInterval
 // Что такое замыкание функции?
 // Классы и Функции конструкторы (base).
-//
+// AJAX
+// Promise
+// Fetch API
+// Async/Await
+// localStorage
+// Геттеры и сеттеры
+// Инкапсуляция
