@@ -194,6 +194,17 @@ let exampleCodeOne = function() {
     localStorage.removeItem('number'); // удаляем ключь с значением
     localStorage.clear(); // Очищяем localStorage
 
+    localStorage["Ключ"] = "Значение" //установка значения
+    localStorage["Ключ"] // Получение значения
+    delete localStorage["Ключ"] // Удаление значения 
+    try {
+        localStorage.setItem('ключ', 'значение');
+    } catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+            alert('Превышен лимит');
+        }
+    }   
+
 
     new RegExp('patten', 'flag'); // /pattern/f
     const reg = /n/igm; //
@@ -504,7 +515,8 @@ let exampleCodeTwo = function() {
     });
 
 
-    // Next category
+    // Event loop -  http://latentflip.com/loupe/
+    // Асинхронный код
     setTimeout( () => {
         //clearTimeout()
         console.log('After timeout');
@@ -672,6 +684,25 @@ let exampleCodeTwo = function() {
         console.log('Final');
     }
     console.log('Still normal');
+
+
+
+    // ================================= //
+    // ========= Animations ============ //
+    // ================================= //
+    function myAnimation() {
+        pos++;
+        elem.style.top = pos + 'px';
+        elem.style.left = pos + 'px';
+
+        if (pox < 300) {
+            requestAnimationFrame(myAnimation);
+        }
+    }
+    btn.addEventListener('click', () => requestAnimationFrame(myAnimation));
+    
+    let id = requestAnimationFrame(myAnimation);
+    cancelAnimationFrame(id);
 
 
 };
@@ -896,3 +927,11 @@ importCode(".js-code-import-3", exampleCodeTasks);
 // localStorage
 // Геттеры и сеттеры
 // Инкапсуляция
+// Event loop
+
+
+// https://tproger.ru/articles/7-npx-komand-kotorye-pomogajut-pri-razrabotke/
+// npx gitignore node // https://github.com/msfeldstein/gitignore
+// npx kill-port 9000 // https://github.com/tiaanduplessis/kill-port
+// npx sort-package-json // https://github.com/keithamus/sort-package-json
+// npx npm-check-updates --target minor -u // https://github.com/raineorshine/npm-check-updates
