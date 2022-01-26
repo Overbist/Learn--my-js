@@ -223,6 +223,9 @@ let exampleCodeOne = function() {
     ans.match(reg); // ищем совпадения и возращяем в массиве.
     ans.search(reg); //
     ans.replace(reg, ''); // заменяем символы, можно регуляркой
+
+    // REACT
+    setState({}); // Модифицируем состояние
     
 
 
@@ -246,6 +249,11 @@ let exampleCodeOne = function() {
     scrollTop;
 
     symbol.description; // вывести описание символа
+
+    // React
+    state
+
+    // <Fragment></Fragment> || <>html</>
     
 
 
@@ -920,6 +928,8 @@ importCode(".js-code-import-3", exampleCodeTasks);
 // setTimeout setInterval
 // Что такое замыкание функции?
 // Классы и Функции конструкторы (base).
+// Деструкторизация
+// Контекст вызова this
 // AJAX
 // Promise
 // Fetch API
@@ -927,6 +937,7 @@ importCode(".js-code-import-3", exampleCodeTasks);
 // localStorage
 // Геттеры и сеттеры
 // Инкапсуляция
+// Интерполяция
 // Event loop
 
 
@@ -935,3 +946,12 @@ importCode(".js-code-import-3", exampleCodeTasks);
 // npx kill-port 9000 // https://github.com/tiaanduplessis/kill-port
 // npx sort-package-json // https://github.com/keithamus/sort-package-json
 // npx npm-check-updates --target minor -u // https://github.com/raineorshine/npm-check-updates
+
+// npx create-react-app my-app // https://github.com/facebook/create-react-app
+
+
+
+
+// REACT
+// На прямую состояния менять не можем. Для этого используем setState()
+// Метод setState всегда запускает метод render()
