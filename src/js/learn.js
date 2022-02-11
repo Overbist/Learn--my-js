@@ -99,8 +99,8 @@ let personalMovieDB = {
 
 
 
-
-let exampleCodeOne = function() {
+/* === Базовые знания === */
+let basicInfoBlock = function() {
 
     /*
         Number
@@ -132,10 +132,29 @@ let exampleCodeOne = function() {
     Boolean('4'); // true
     !!'444';
     
+
     // Приоритет операторов
     let urlTablePriority = `
-    https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table`;
+        https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table`;
 
+
+    // Variebles
+    var // Функциональная область видимости
+    let // блочная область видимости
+
+
+    allert(`hello ${name}`);
+    prompt('Вам есть 18 лет?', '18');
+    confirm("Удалить аккаунт?") ? 
+        console.log( "Ваш аккаунт удалили!" ) : 
+        console.log( "Вы нажали отмену" ); // тернарное выражение
+
+};
+
+
+
+/* === Методы === */
+let methodsInfoBlock = function() {
 
     // Methods
     document.querySelector('.header'); // поиск селектора. Возращяет первый найденный
@@ -154,6 +173,7 @@ let exampleCodeOne = function() {
     Element.remove(); // удаляем елемент
     Element.replaceWith(element); // заменяем елемент
     Element.closest(); // возвращает ближайший родительский элемент (или сам элемент)
+    Element.cloneNode(true); // копируем елемент. Без true копирует без содержиможно
     Element.parentNode; // получаем родителя
     Element.parentElement; // получаем родителя
     Element.firstChild;
@@ -173,6 +193,8 @@ let exampleCodeOne = function() {
     JSON.stringify(obj); // Превращяем объект в json формат
     JSON.parse(json); // Получаем объект с json
 
+
+
     // ajax и общение с серверами 
     const request = new XMLHttpRequest();
     request.open('GET', 'js/current.json');
@@ -187,6 +209,8 @@ let exampleCodeOne = function() {
 
     Promise.all([test(1000), test(2000)]); // ждет пока все выполнятся
     Promise.race([test(1000), test(2000)]); // выполняет когда уже первый промис выполнился
+
+
 
     // localStorage https://tproger.ru/articles/localstorage/
     localStorage.setItem('number', 5); // Записываем
@@ -206,6 +230,7 @@ let exampleCodeOne = function() {
     }   
 
 
+    /* Регулярки */
     new RegExp('patten', 'flag'); // /pattern/f
     const reg = /n/igm; //
     const ans = prompt('Введите данные...');
@@ -223,6 +248,8 @@ let exampleCodeOne = function() {
     ans.match(reg); // ищем совпадения и возращяем в массиве.
     ans.search(reg); //
     ans.replace(reg, ''); // заменяем символы, можно регуляркой
+
+
 
     // REACT
     setState({}); // Модифицируем состояние
@@ -250,13 +277,12 @@ let exampleCodeOne = function() {
 
     symbol.description; // вывести описание символа
 
+
     // React
     state
 
-    // <Fragment></Fragment> || <>html</>
     
-
-
+    
     // Numbers
     // В JavaScript встроен объект Math, который содержит различные математические функции и константы.
     // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
@@ -286,6 +312,7 @@ let exampleCodeOne = function() {
     i += 1; // К-к-комбо i = i + 1
 
     
+
     // string
     // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String
     const str = "";
@@ -311,6 +338,7 @@ let exampleCodeOne = function() {
     str.replace('', ''); // заменяем символы, можно регуляркой
 
     str[2]; // r
+
 
 
     // Объекты для хранения именованных коллекций.
@@ -386,6 +414,7 @@ let exampleCodeOne = function() {
     Object.entries(obj); // Возращяет масив с объекта
 
 
+
     /* === Dates === */
     const now = new Date();
     now.getFullYear(); // Получаем год
@@ -398,62 +427,11 @@ let exampleCodeOne = function() {
     now.getTime(); // Возращяет таймШтамп. Секунд с 1970года.
 
     now.setHours(18); // устанавливаем часы
-
-
-    // Event handlers
-    // https://oddler.ru/blog/i63
-    // https://developer.mozilla.org/ru/docs/Web/Events
-    onclick; // Обработчик события клик
-    onsubmit; // Обработчик на форму
-    oninput; // Обработчик на input
-    onscroll; // Обработчик на скрол
-    onchange; // При изменении
-
-    // addEventListener
-    input;
-    change; // когда уводим мышку с инпута
-    readystatechange; // отслеживает статус готовности нашего запроса на данный момент
-    load; //
-
-    touchstart; // аналог клика для мобайла
-    touchmove; // движение пальцем
-    touchend; // отпускаем палец
-
-
-    Element.onclick = () => {
-        console.log('Click');
-    };
-
-    window.onscroll = function() {
-        console.log('Scroll');
-    };
-    
-    Element.addEventListener( 'click', (e) => {
-        e.preventDefault();
-        //e.target.remove();
-        //e.currentTarget;
-        Element.style.color = 'red';
-    });
-
-    Element.addEventListener('click', myFunction);
-    Element.removeEventListener('click', myFunction);
-
-    document.addEventListener('DOMContentLoaded', () => {
-
-    });
-
 };
 
 
 
 let exampleCodeTwo = function() {
-
-    allert(`hello ${name}`);
-    prompt('Вам есть 18 лет?', '18');
-    confirm("Удалить аккаунт?") ? 
-        console.log( "Ваш аккаунт удалили!" ) : 
-        console.log( "Вы нажали отмену" ); // тернарное выражение
-
 
     // ================================= //
     // ========== conditions =========== //
@@ -479,6 +457,7 @@ let exampleCodeTwo = function() {
     }
 
 
+
     // ================================= //
     // =========== cycles ============== //
     // ================================= //
@@ -499,13 +478,12 @@ let exampleCodeTwo = function() {
             // Внутри while команда continue «перематывает» программу сразу к началу следующей итерации.
             // Внутри for команда continue «перематывает» программу к дополнительной части текущей итерации, после выполнения которой начинается следующая итерация цикла.
         }
-
         console.log( i );
     }
 
     
-    // for array
-    for (let i = 0; i < arr.length; i++) {
+    
+    for (let i = 0; i < arr.length; i++) { // for array
         console.log( arr[i]*10 );
     }
     
@@ -517,8 +495,8 @@ let exampleCodeTwo = function() {
         console.log( `Свойство ${key} имеет значение ${obj[key]}` );
     }
 
-    arr.forEach(function(item, i, array) { // arr = [1];
-        console.log( item + " Индекс " + i ); // 1 Индекс 0
+    arr.forEach((item, index, array) => { // arr = [1];
+        console.log( item + " Индекс " + index ); // 1 Индекс 0
     });
 
     let newArr = arr.map(function(item) {
@@ -526,26 +504,15 @@ let exampleCodeTwo = function() {
     });
 
 
-    // Event loop -  http://latentflip.com/loupe/
-    // Асинхронный код
-    setTimeout( () => {
-        //clearTimeout()
-        console.log('After timeout');
-    }, 2500);
-
-    setInterval( () => {
-        console.log('Interval');
-    }, 1000);
-
-    const timerId = setTimeout(logger, 2000);
-    function logger() {
-        console.log('text');
-    }
-
 
     // ==================================== //
     // ============== Arrays ============== //
     // ==================================== //
+    
+    let usersByDay = [812, 1360, 657, 1247];
+    usersByDay.length; // Длина массива
+    usersByDay[usersByDay.length - 1]; // последний элемент массива - 1247
+
 
 
     // ==================================== //
@@ -553,14 +520,11 @@ let exampleCodeTwo = function() {
     // ==================================== //
 
     // Когда функция содержится внутри объекта, она называется методом данного объекта
-    // Function Declaration
-    // Function Expression - from let
+    // Function Declaration - можно вызвать до иницилизации функции
+    // Function Expression - from let преймущество в том что мы знаем что она будет вызвана только ниже.
 
-    let log = function() { // Function Expression
-        console.log('Function Expression');
-    };
-
-    let arrow = () => { // Стрелочная функция
+    // Стрелочная функция не имеет своего контекста
+    let arrow = () => { 
         code;
     };
 
@@ -574,10 +538,23 @@ let exampleCodeTwo = function() {
     arr.sort((a,b) => a - b);
 
 
-    function compareNum(a, b) {
+    // Function Declaration
+    function compareNum(a, b) { 
         return a - b;
     }
     arr.sort(compareNum);
+
+
+    // Function Expression
+    let log = function() { 
+        console.log('Function Expression');
+    };
+
+
+    // Самовызывающаяся функция IIFE
+    (function seyHi() {
+        console.log('Самовызывающаяся функция');
+    })();
 
 
 
@@ -637,6 +614,77 @@ let exampleCodeTwo = function() {
     console.log(squareLong.calcArea());
 
 
+
+    // ==================================== //
+    // ========== Event handlers ========== //
+    // ==================================== //
+
+    // https://oddler.ru/blog/i63
+    // https://developer.mozilla.org/ru/docs/Web/Events
+
+    onclick; // Обработчик события клик
+    onsubmit; // Обработчик на форму
+    oninput; // Обработчик на input
+    onscroll; // Обработчик на скрол
+    onchange; // При изменении
+
+    Element.onclick = () => {
+        console.log('Click');
+    };
+
+    window.onscroll = function() {
+        console.log('Scroll');
+    };
+
+
+
+    // addEventListener
+    input;
+    change; // когда уводим мышку с инпута
+    readystatechange; // отслеживает статус готовности нашего запроса на данный момент
+    load; //
+
+    touchstart; // аналог клика для мобайла
+    touchmove; // движение пальцем
+    touchend; // отпускаем палец
+    
+    Element.addEventListener( 'click', (e) => {
+        e.preventDefault();
+        //e.target // элемент по которому кликнули, если следили за списком
+        //e.target.remove();
+        //e.currentTarget;
+        Element.style.color = 'red';
+    });
+
+    Element.addEventListener('click', myFunction);
+    Element.removeEventListener('click', myFunction);
+
+    document.addEventListener('DOMContentLoaded', () => { code });
+
+
+
+    // ==================================== //
+    // ============ Event loop ============ //
+    // ==================================== //
+    // http://latentflip.com/loupe/
+
+    // Асинхронный код
+    setTimeout( () => {
+        //clearTimeout()
+        console.log('After timeout');
+    }, 2500);
+
+    setInterval( () => {
+        console.log('Interval');
+    }, 1000);
+
+    const timerId = setTimeout(logger, 2000);
+    function logger() {
+        console.log('text');
+    }
+
+
+
     // ================================= //
     // ========== Promise ============== //
     // ================================= //
@@ -687,6 +735,8 @@ let exampleCodeTwo = function() {
     
 
 
+
+
     // ================================= //
     // =========== Errors ============== //
     // ================================= //
@@ -700,6 +750,8 @@ let exampleCodeTwo = function() {
         console.log('Final');
     }
     console.log('Still normal');
+
+
 
 
 
@@ -721,6 +773,12 @@ let exampleCodeTwo = function() {
     cancelAnimationFrame(id);
 
 
+};
+
+
+
+let reactExampleCode = function() {
+    // <Fragment></Fragment> || <>html</>
 };
 
     
