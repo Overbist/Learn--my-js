@@ -15,5 +15,9 @@
     
     &__menuItem {
         margin: 0 8px;
+
+        &:hover {
+            color: $color-main;
+        }
     }
 }

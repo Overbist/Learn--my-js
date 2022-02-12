@@ -7,6 +7,7 @@ const rename       = require('gulp-rename');
 const sourcemaps   = require('gulp-sourcemaps');
 const concat       = require('gulp-concat');
 const uglify       = require('gulp-uglify-es').default;
+
 /* -------------------------------------------------- */
 // Convert sass file to css
 gulp.task('create-css-file', function () {
@@ -19,6 +20,7 @@ gulp.task('create-css-file', function () {
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('../'));
 });
+
 /* -------------------------------------------------- */
 // Create js file
 gulp.task('create-js-file', function () {
@@ -29,9 +31,10 @@ gulp.task('create-js-file', function () {
 		//.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('../'));
 });
+
 /* -------------------------------------------------- */
 // Create library css
-gulp.task('concat-css', function () {
+gulp.task('concat-extend-css', function () {
 	return gulp.src('extend/css/*')
 		.pipe(sourcemaps.init())
 		.pipe(concat('extend.min.css'))
@@ -39,9 +42,10 @@ gulp.task('concat-css', function () {
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('../'));
 });
+
 /* -------------------------------------------------- */
 // Create library js
-gulp.task('concat-js', function () {
+gulp.task('concat-extend-js', function () {
 	return gulp.src('extend/js/*.js')
 		.pipe(sourcemaps.init())
 		.pipe(concat('extend.min.js'))
@@ -49,15 +53,21 @@ gulp.task('concat-js', function () {
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('../'));
 });
+
+
 /* -------------------------------------------------- */
 // Watches
 gulp.task('watch', function () {
 	gulp.watch('scss/*.scss', gulp.series('create-css-file'));
 	gulp.watch('js/*.js', gulp.series('create-js-file'));
 });
+
+
 /* -------------------------------------------------- */
 // Concat all
-gulp.task('concat-all', gulp.series('concat-css', 'concat-js'));
+gulp.task('concat-extend-all', gulp.series('concat-extend-css', 'concat-extend-js'));
+
+
 /* -------------------------------------------------- */
 // Main Task
 gulp.task('default', gulp.series('create-css-file', 'create-js-file', 'watch'));

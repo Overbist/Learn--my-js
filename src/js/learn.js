@@ -100,16 +100,19 @@ let personalMovieDB = {
 
 
 /* === Базовые знания === */
-let basicInfoBlock = function() {
-
+let tabBasicInfo = function() {
     /*
-        Number
-        String
-        Boolean
-        Object
-        Null
-        Undefined
-     */ 
+     *  1. Number // ±(253-1)
+     *  2. bigint
+     *  3. String
+     *  4. Boolean
+     *  5. Null
+     *  6. Undefined
+     *  7. Object
+     *  8. Symbol
+     */
+
+    // Оператор typeof позволяет нам увидеть, какой тип данных сохранён в переменной.
 
     // область видимости
     // Рекурсия - это когда функция вызывает сама себя внутри
@@ -139,8 +142,8 @@ let basicInfoBlock = function() {
 
 
     // Variebles
-    var // Функциональная область видимости
-    let // блочная область видимости
+    var variebleName;// Функциональная область видимости
+    let letName; // блочная область видимости
 
 
     allert(`hello ${name}`);
@@ -153,136 +156,9 @@ let basicInfoBlock = function() {
 
 
 
-/* === Методы === */
-let methodsInfoBlock = function() {
+/* ========= Methods ========= */
+let tabMethods = function() {
 
-    // Methods
-    document.querySelector('.header'); // поиск селектора. Возращяет первый найденный
-    document.querySelectorAll('.header'); // поиска селектора // forEach(item => item.style.color = 'red')
-    document.createElement('имя тега');
-    Element.innerHTML = 'html or text'; // вставляем html плюс текст
-    Element.insertAdjacentHTML('position', '<h2>Hello</h2>'); // вставляем код
-    Element.classList.remove('class'); // удаляем класс
-    Element.classList.add('class'); // добавляем класс
-    Element.classList.toggle('class'); // чередуем классы
-    Element.classList.contains('class'); // проверяем, есть ли у элемента класс
-    Element.insertBefore(div, lement[2]); // добавляет элемент в
-    Element.appendChild(); // добавляет элемент в конец элемента.
-    Element.append(добавляемый-элемент); // добавляет элемент в конец элемента-родителя.
-    Element.prepend(добавляемый-элемент); // добавляет элемент в начало элемента-родителя.
-    Element.remove(); // удаляем елемент
-    Element.replaceWith(element); // заменяем елемент
-    Element.closest(); // возвращает ближайший родительский элемент (или сам элемент)
-    Element.cloneNode(true); // копируем елемент. Без true копирует без содержиможно
-    Element.parentNode; // получаем родителя
-    Element.parentElement; // получаем родителя
-    Element.firstChild;
-    Element.firstElementChild;
-    Element.lastChild;
-    Element.nextElementSibling; // 
-    Element.style.color = '#000'; // добавляем стили
-    Element.style.cssText = 'width: 500px; height: 100px;'; // добавляем стили
-
-    Element.dataset; //
-    window.scrollBy(Х, Y); // Скрол от текущей позиции
-    window.scrollTo(Х, Y); // Чтобы прокрутить страницу
-    window.getComputedStyle; // получаем все стили, которые применяются к элементу
-
-    password.type = 'text'; // Превращяем инпут с паролем в текстовое поле
-
-    JSON.stringify(obj); // Превращяем объект в json формат
-    JSON.parse(json); // Получаем объект с json
-
-
-
-    // ajax и общение с серверами 
-    const request = new XMLHttpRequest();
-    request.open('GET', 'js/current.json');
-    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    request.send();
-    // npx json-server db.json // json-server db.json
-    // https://winnote.ru/security/160-windows-powershell-vypolnenie-scenariev-otklyucheno-v-etoy-sisteme.html
-
-    fetch('http://localhost:3000/menu') // интерфейс JavaScript для работы с запросами и ответами HTTP
-        .then(data => data.json()) // вместо XMLHttpRequest - https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch
-        .then(res => console.log(res)); 
-
-    Promise.all([test(1000), test(2000)]); // ждет пока все выполнятся
-    Promise.race([test(1000), test(2000)]); // выполняет когда уже первый промис выполнился
-
-
-
-    // localStorage https://tproger.ru/articles/localstorage/
-    localStorage.setItem('number', 5); // Записываем
-    localStorage.getItem('number'); // Получаем
-    localStorage.removeItem('number'); // удаляем ключь с значением
-    localStorage.clear(); // Очищяем localStorage
-
-    localStorage["Ключ"] = "Значение" //установка значения
-    localStorage["Ключ"] // Получение значения
-    delete localStorage["Ключ"] // Удаление значения 
-    try {
-        localStorage.setItem('ключ', 'значение');
-    } catch (e) {
-        if (e == QUOTA_EXCEEDED_ERR) {
-            alert('Превышен лимит');
-        }
-    }   
-
-
-    /* Регулярки */
-    new RegExp('patten', 'flag'); // /pattern/f
-    const reg = /n/igm; //
-    const ans = prompt('Введите данные...');
-    // i - регистр
-    // g 
-    // m
-    
-    // \d ищем цифры
-    // \w ищем все буквы
-    // \s ищем все пробелы
-
-    // \D ищем НЕ цифры
-    // \W ищем все НЕ буквы
-    reg.test(ans); //
-    ans.match(reg); // ищем совпадения и возращяем в массиве.
-    ans.search(reg); //
-    ans.replace(reg, ''); // заменяем символы, можно регуляркой
-
-
-
-    // REACT
-    setState({}); // Модифицируем состояние
-    
-
-
-    // Property
-    str.length; // Свойство содержит длину строки
-    arr.length; // Свойство содержит длину массива
-    textContent; // Получаем текстовое содержимое
-    input.value; // Получаем данные из поля ввода
-    checkbox.checked; // отмечен ли чекбокс
-
-    pageYOffset; // количество пикселей, на которое пользователь прокрутил страницу по вертикали
-    pageXOffset; // Величина горизонтальной прокрутки
-    scrollY;
-    scrollX;
-    clientWidth;
-    clientHeight;
-    offsetWidth;
-    offsetHeight;
-    scrollWidth;
-    scrollHeight;
-    scrollTop;
-
-    symbol.description; // вывести описание символа
-
-
-    // React
-    state
-
-    
-    
     // Numbers
     // В JavaScript встроен объект Math, который содержит различные математические функции и константы.
     // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
@@ -377,7 +253,7 @@ let methodsInfoBlock = function() {
         return name.length < 5;
     }); // фильтрует елементы внутри массива. И возращяет новый масив.
 
-    arr.reduce((sum, current) => sum + current); // схлопывать или собирать масив в одно эдиное целое. Метод перебора возращяет новый масив.
+    arr.reduce((sum, current) => sum + current); // собирать масив в одно эдиное целое. Метод перебора возращяет новый масив.
     arr.reduceRight(); // 
 
     new Map(); // – создаёт коллекцию.
@@ -415,6 +291,109 @@ let methodsInfoBlock = function() {
 
 
 
+    // All Methods
+    document.querySelector('.header'); // поиск селектора. Возращяет первый найденный
+    document.querySelectorAll('.header'); // поиска селектора // forEach(item => item.style.color = 'red')
+    document.createElement('имя тега');
+    Element.innerHTML = 'html or text'; // вставляем html плюс текст
+    Element.innerText = 'text'; // вставляем текст
+    Element.insertAdjacentHTML('position', '<h2>Hello</h2>'); // вставляем код
+    Element.classList.remove('class'); // удаляем класс
+    Element.classList.add('class'); // добавляем класс
+    Element.classList.toggle('class'); // чередуем классы
+    Element.classList.contains('class'); // проверяем, есть ли у элемента класс
+    Element.insertBefore(div, lement[2]); // добавляет элемент в
+    Element.appendChild(); // добавляет элемент в конец элемента.
+    Element.append(добавляемый-элемент); // добавляет элемент в конец элемента-родителя.
+    Element.prepend(добавляемый-элемент); // добавляет элемент в начало элемента-родителя.
+    Element.remove(); // удаляем елемент
+    Element.replaceWith(element); // заменяем елемент
+    Element.closest(); // возвращает ближайший родительский элемент (или сам элемент)
+    Element.cloneNode(true); // копируем елемент. Без true копирует без содержиможно
+    Element.parentNode; // получаем родителя
+    Element.parentElement; // получаем родителя
+    Element.firstChild;
+    Element.firstElementChild;
+    Element.lastChild;
+    Element.nextElementSibling; // 
+    Element.style.color = '#000'; // добавляем стили
+    Element.style.cssText = 'width: 500px; height: 100px;'; // добавляем стили
+
+    Element.dataset; //
+    window.scrollBy(Х, Y); // Скрол от текущей позиции
+    window.scrollTo(Х, Y); // Чтобы прокрутить страницу
+    window.getComputedStyle; // получаем все стили, которые применяются к элементу
+
+    password.type = 'text'; // Превращяем инпут с паролем в текстовое поле
+
+
+
+    // JSON
+    JSON.stringify(obj); // Превращяем объект в json формат
+    JSON.parse(json); // Получаем объект с json
+    Response.json(); // 
+
+
+
+    // ajax и общение с серверами 
+    const request = new XMLHttpRequest();
+    request.open('GET', 'js/current.json');
+    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    request.send();
+    // npx json-server db.json // json-server db.json
+    // https://winnote.ru/security/160-windows-powershell-vypolnenie-scenariev-otklyucheno-v-etoy-sisteme.html
+
+    fetch('http://localhost:3000/menu') // интерфейс JavaScript для работы с запросами и ответами HTTP
+        .then(data => data.json()) // вместо XMLHttpRequest - https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch
+        .then(res => console.log(res)); 
+
+    Promise.all([test(1000), test(2000)]); // ждет пока все выполнятся
+    Promise.race([test(1000), test(2000)]); // выполняет когда уже первый промис выполнился
+
+
+
+    // localStorage https://tproger.ru/articles/localstorage/
+    localStorage.setItem('number', 5); // Записываем
+    localStorage.getItem('number'); // Получаем
+    localStorage.removeItem('number'); // удаляем ключь с значением
+    localStorage.clear(); // Очищяем localStorage
+
+    localStorage["Ключ"] = "Значение" //установка значения
+    localStorage["Ключ"] // Получение значения
+    delete localStorage["Ключ"] // Удаление значения 
+    try {
+        localStorage.setItem('ключ', 'значение');
+    } catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+            alert('Превышен лимит');
+        }
+    }   
+
+
+
+    /* Регулярки */
+    new RegExp('patten', 'flag'); // /pattern/f
+    const reg = /n/igm; //
+    const ans = prompt('Введите данные...');
+    
+    reg.test(ans); //
+    ans.match(reg); // ищем совпадения и возращяем в массиве.
+    ans.search(reg); //
+    ans.replace(reg, ''); // заменяем символы, можно регуляркой
+
+    // i - регистр
+    // g 
+    // m
+    
+    // \d ищем цифры
+    // \w ищем все буквы
+    // \s ищем все пробелы
+
+    // \D ищем НЕ цифры
+    // \W ищем все НЕ буквы
+
+
+
     /* === Dates === */
     const now = new Date();
     now.getFullYear(); // Получаем год
@@ -427,14 +406,60 @@ let methodsInfoBlock = function() {
     now.getTime(); // Возращяет таймШтамп. Секунд с 1970года.
 
     now.setHours(18); // устанавливаем часы
+
+
+
+    // REACT
+    setState({}); // Модифицируем состояние
 };
 
 
+// Property
+let tabPropertys = function() {
+    
+    str.length; // Свойство содержит длину строки
+    arr.length; // Свойство содержит длину массива
+    textContent; // Получаем текстовое содержимое
+    input.value; // Получаем данные из поля ввода
+    checkbox.checked; // отмечен ли чекбокс
 
-let exampleCodeTwo = function() {
+    pageYOffset; // количество пикселей, на которое пользователь прокрутил страницу по вертикали
+    pageXOffset; // Величина горизонтальной прокрутки
+    scrollY;
+    scrollX;
+    clientWidth;
+    clientHeight;
+    offsetWidth;
+    offsetHeight;
+    scrollWidth;
+    scrollHeight;
+    scrollTop;
+
+    symbol.description; // вывести описание символа
+
+
+    // React property
+    state
+};
+
+
+/*
+ * Conditions
+ * Cycles
+ * Arrays
+ * Functions
+ * Геттеры и сеттеры
+ * Class
+ * Event handlers
+ * Event loop
+ * Promise
+ * Errors
+ * Animations
+ */ 
+let tabFundamental = function() {
 
     // ================================= //
-    // ========== conditions =========== //
+    // ========== Conditions =========== //
     // ================================= //
     if( 4 == 4) {
         code;
@@ -459,7 +484,7 @@ let exampleCodeTwo = function() {
 
 
     // ================================= //
-    // =========== cycles ============== //
+    // =========== Cycles ============== //
     // ================================= //
     while (count < 10) { // Действия будут выполняться снова и снова, пока условие не вернёт false
         console.log(count);
@@ -476,7 +501,8 @@ let exampleCodeTwo = function() {
             break; // Оператор break прерывает выполнение цикла.
             // continue; // оператор позволяет пропустить шаг и продолжить цикл
             // Внутри while команда continue «перематывает» программу сразу к началу следующей итерации.
-            // Внутри for команда continue «перематывает» программу к дополнительной части текущей итерации, после выполнения которой начинается следующая итерация цикла.
+            // Внутри for команда continue «перематывает» программу к дополнительной части текущей итерации,
+            // после выполнения которой начинается следующая итерация цикла.
         }
         console.log( i );
     }
@@ -516,7 +542,7 @@ let exampleCodeTwo = function() {
 
 
     // ==================================== //
-    // ============ functions ============= //
+    // ============ Functions ============= //
     // ==================================== //
 
     // Когда функция содержится внутри объекта, она называется методом данного объекта
@@ -777,13 +803,13 @@ let exampleCodeTwo = function() {
 
 
 
-let reactExampleCode = function() {
-    // <Fragment></Fragment> || <>html</>
+let tabReactExample = function() {
+    // <Fragment>html</Fragment> || <>html</>
 };
 
     
 
-let exampleCodeTasks = function() {
+let tabExampleTasks = function() {
 
     // ========= Tasks ============= //
 
@@ -956,15 +982,24 @@ let exampleCodeTasks = function() {
 };
 
 
-function importCode(className, importedCode) {
-    let codeSelector = document.querySelector(className);
+function importCodeInPage(selectorName, importedCode) {
+    let codeSelector = document.querySelector(selectorName);
     codeSelector.textContent = importedCode;
 }
 
-importCode(".js-code-import-1", exampleCodeOne);
-importCode(".js-code-import-2", exampleCodeTwo);
-importCode(".js-code-import-3", exampleCodeTasks);
+importCodeInPage("#js-code-import-1", tabBasicInfo);
+importCodeInPage("#js-code-import-2", tabMethods);
+importCodeInPage("#js-code-import-3", tabPropertys);
+importCodeInPage("#js-code-import-4", tabFundamental);
+importCodeInPage("#js-code-import-5", tabReactExample);
+importCodeInPage("#js-code-import-6", tabExampleTasks);
 
+
+
+// Ctrl + ~ - открыть терминал
+// Ctrl+K Ctrl+0 - свернуть весь код
+// Shift + Alt + 🠗 = скопировать строку
+// Hold Alt + left mous click = ставим указатель в несколько мест
 
 
 // this
