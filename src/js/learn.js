@@ -164,13 +164,13 @@ let tabMethods = function() {
     // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
     const num = 1;
     num.toString(); // возвращает строковое представление числа
-    toFixed(n); // округляет число до n знаков после запятой
+    num.toFixed(n); // округляет число до n знаков после запятой
     Math.floor(x); // Округление в меньшую сторону: 3.1 становится 3, а -1.1 — -2.
     Math.ceil(); // Округление в большую сторону: 3.1 становится 4, а -1.1 — -1.
     Math.round(); // Округление до ближайшего целого: 3.1 становится 3, 3.6 — 4, а -1.1 — -1.
     Math.trunc(); // Производит удаление дробной части без округления: 3.1 становится 3, а -1.1 — -1.
     Math.random(); // Возвращает псевдослучайное число в диапазоне от 0 (включительно) до 1 (но не включая 1)
-    Math.max(3, 5, -10, 0, 1); // 5 - Возвращает наибольшее число из перечисленных аргументов.
+    Math.max(3, 5, -10, 0); // 5 - Возвращает наибольшее число из перечисленных аргументов.
     Math.min(1, 2); // 1, Возвращает наименьшее число из перечисленных аргументов.
     Math.pow(2, 10); // 2 в степени 10 = 1024, Возвращает число n, возведённое в степень
     isNaN(value); // преобразует значение в число и проверяет является ли оно NaN
@@ -277,6 +277,9 @@ let tabMethods = function() {
     arr[0];
     delete arr[0]; // удаляет первый элемент
 
+
+    // Запись объекта со всеми свойствами в фигурных скобках, называется литералом объекта. Если необходимо создать объект с помощью литерала, вам просто нужно использовать фигурные скобки. И если у объекта есть какие-то свойства, записать их внутри этих скобок.
+    // Как вы уже знаете, при обращении массив[индекс] мы получаем элемент массива. В нашем случае это объект игрока, из которого можно читать, как из любого другого объекта через точку. Поэтому запись в теле нашего цикла массив[индекс].ключ то же самое, что запись объект.ключ при работе с объектом напрямую.
     obj.name;
     obj['name'];
     delete obj.name; // Удаляем свойства из объекта 
@@ -303,13 +306,14 @@ let tabMethods = function() {
     Element.classList.toggle('class'); // чередуем классы
     Element.classList.contains('class'); // проверяем, есть ли у элемента класс
     Element.insertBefore(div, lement[2]); // добавляет элемент в
-    Element.appendChild(); // добавляет элемент в конец элемента.
+    Element.appendChild(); // добавляет элемент в конец элемента-родителя. Работает только с узлами
     Element.append(добавляемый-элемент); // добавляет элемент в конец элемента-родителя.
     Element.prepend(добавляемый-элемент); // добавляет элемент в начало элемента-родителя.
     Element.remove(); // удаляем елемент
     Element.replaceWith(element); // заменяем елемент
-    Element.closest(); // возвращает ближайший родительский элемент (или сам элемент)
     Element.cloneNode(true); // копируем елемент. Без true копирует без содержиможно
+    Element.closest(); // возвращает ближайший родительский элемент (или сам элемент)
+    Element.children; // возвращает коллекцию дочерних, то есть вложенных, DOM-элементов.
     Element.parentNode; // получаем родителя
     Element.parentElement; // получаем родителя
     Element.firstChild;
@@ -491,10 +495,12 @@ let tabFundamental = function() {
         count++;
     }
 
+
     do {
         console.log(count);
         count++;
     } while (count < 14);
+
 
     for (let i = 0; i < 10; i++) {
         if ( i === 7) {
@@ -508,16 +514,19 @@ let tabFundamental = function() {
     }
 
     
-    
-    for (let i = 0; i < arr.length; i++) { // for array
+
+    // for array
+    for (let i = 0; i < arr.length; i++) {
         console.log( arr[i]*10 );
     }
     
-    for (let item of arr) { // for array. (for of)
+    // for array. (for of)
+    for (let item of arr) {
         console.log( item*10 );
     }
 
-    for (let key in obj) { // for obj. (for in)
+    // for obj. (for in)
+    for (let key in obj) {
         console.log( `Свойство ${key} имеет значение ${obj[key]}` );
     }
 
@@ -548,6 +557,13 @@ let tabFundamental = function() {
     // Когда функция содержится внутри объекта, она называется методом данного объекта
     // Function Declaration - можно вызвать до иницилизации функции
     // Function Expression - from let преймущество в том что мы знаем что она будет вызвана только ниже.
+
+    // Замыкание — функция, которая помнит о своём окружении. То есть это функция + все значения переменных вне локальной области видимости этой функции. Речь идёт только о переменных, которые функция использует в своём коде.
+
+    // Функции, которые что-то возвращают, называются геттерами и начинаются со слова get. 
+
+    // Изнутри методов можно обращаться к свойствам и другим методам объекта с помощью ключевого слова this. Оно указывает на текущий объект и называется контекстом вызова.
+    // Важная деталь: пока функция не вызвана, this не содержит никакого значения, контекст появляется только в момент вызова функции.
 
     // Стрелочная функция не имеет своего контекста
     let arrow = () => { 
@@ -665,6 +681,7 @@ let tabFundamental = function() {
 
 
     // addEventListener
+    
     input;
     change; // когда уводим мышку с инпута
     readystatechange; // отслеживает статус готовности нашего запроса на данный момент
@@ -673,7 +690,16 @@ let tabFundamental = function() {
     touchstart; // аналог клика для мобайла
     touchmove; // движение пальцем
     touchend; // отпускаем палец
+
+    // KeyboardEvent.keyCode
+    // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+    document.addEventListener('keydown', function(evt) {
+        if (evt.keyCode === 27) { // Проверяем, что код клавиши равен 27
+          // Код отсюда выполнится только при нажатии ESC
+        }
+      });
     
+    // Асинхронный код
     Element.addEventListener( 'click', (e) => {
         e.preventDefault();
         //e.target // элемент по которому кликнули, если следили за списком
@@ -977,6 +1003,36 @@ let tabExampleTasks = function() {
         display.textContent = '';
     };
 
+
+    // Сортировка массива
+    // Массив с числами numbers сортируется по возрастанию элементов. На каждой итерации мы сравниваем minValue с остальными элементами массива. Если какой-то из них окажется меньше, чем minValue, он запишется в minValue, перезаписав старое значение, и переместится в начало массива. Переменная swap — вспомогательная переменная, с помощью которой мы можем поменять элементы местами.
+    let numbers = [12, 3, 7, 9, 10, 5];
+    for (let i = 0; i <= numbers.length - 2; i++) {
+      let minValue = numbers[i];
+    
+      for (let j = i + 1; j <= numbers.length - 1; j++) {
+        if (numbers[j] < minValue) {
+          minValue = numbers[j];
+          let swap = numbers[i];
+          numbers[i] = minValue;
+          numbers[j] = swap;
+        }
+      }
+    }
+    console.log(numbers); // Выведет: [3, 5, 7, 9, 10, 12];
+
+
+    // Поиск медианы массива
+    let median;
+    if (usersByDay.length % 2 !== 0) {
+        let medianIndex = (usersByDay.length - 1) / 2;
+        median = usersByDay[medianIndex];
+    } else {
+        let leftIndex = usersByDay.length / 2 - 1;
+        let rightIndex = usersByDay.length / 2;
+        median = (usersByDay[leftIndex] + usersByDay[rightIndex]) / 2;
+    }
+    console.log(median);
 
 
 };

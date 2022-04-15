@@ -491,10 +491,12 @@ let tabFundamental = function() {
         count++;
     }
 
+
     do {
         console.log(count);
         count++;
     } while (count < 14);
+
 
     for (let i = 0; i < 10; i++) {
         if ( i === 7) {
@@ -508,16 +510,19 @@ let tabFundamental = function() {
     }
 
     
-    
-    for (let i = 0; i < arr.length; i++) { // for array
+
+    // for array
+    for (let i = 0; i < arr.length; i++) {
         console.log( arr[i]*10 );
     }
     
-    for (let item of arr) { // for array. (for of)
+    // for array. (for of)
+    for (let item of arr) {
         console.log( item*10 );
     }
 
-    for (let key in obj) { // for obj. (for in)
+    // for obj. (for in)
+    for (let key in obj) {
         console.log( `Свойство ${key} имеет значение ${obj[key]}` );
     }
 
@@ -977,6 +982,36 @@ let tabExampleTasks = function() {
         display.textContent = '';
     };
 
+
+    // Сортировка массива
+    // Массив с числами numbers сортируется по возрастанию элементов. На каждой итерации мы сравниваем minValue с остальными элементами массива. Если какой-то из них окажется меньше, чем minValue, он запишется в minValue, перезаписав старое значение, и переместится в начало массива. Переменная swap — вспомогательная переменная, с помощью которой мы можем поменять элементы местами.
+    let numbers = [12, 3, 7, 9, 10, 5];
+    for (let i = 0; i <= numbers.length - 2; i++) {
+      let minValue = numbers[i];
+    
+      for (let j = i + 1; j <= numbers.length - 1; j++) {
+        if (numbers[j] < minValue) {
+          minValue = numbers[j];
+          let swap = numbers[i];
+          numbers[i] = minValue;
+          numbers[j] = swap;
+        }
+      }
+    }
+    console.log(numbers); // Выведет: [3, 5, 7, 9, 10, 12];
+
+
+    // Поиск медианы массива
+    let median;
+    if (usersByDay.length % 2 !== 0) {
+        let medianIndex = (usersByDay.length - 1) / 2;
+        median = usersByDay[medianIndex];
+    } else {
+        let leftIndex = usersByDay.length / 2 - 1;
+        let rightIndex = usersByDay.length / 2;
+        median = (usersByDay[leftIndex] + usersByDay[rightIndex]) / 2;
+    }
+    console.log(median);
 
 
 };
