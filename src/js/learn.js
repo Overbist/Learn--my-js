@@ -295,8 +295,9 @@ let tabMethods = function() {
 
 
     // All Methods
-    document.querySelector('.header'); // поиск селектора. Возращяет первый найденный
+    document.querySelector('.header'); // поиск селектора. Возращяет первый найденный. NodeList
     document.querySelectorAll('.header'); // поиска селектора // forEach(item => item.style.color = 'red')
+    document.getElementById('id'); // он может быть вызван только на всём документе.
     document.createElement('имя тега');
     Element.innerHTML = 'html or text'; // вставляем html плюс текст
     Element.innerText = 'text'; // вставляем текст
@@ -313,7 +314,7 @@ let tabMethods = function() {
     Element.replaceWith(element); // заменяем елемент
     Element.cloneNode(true); // копируем елемент. Без true копирует без содержиможно
     Element.closest(); // возвращает ближайший родительский элемент (или сам элемент)
-    Element.children; // возвращает коллекцию дочерних, то есть вложенных, DOM-элементов.
+    Element.children; // children[0] возвращает коллекцию вложенных, DOM-элементов. Динамическая. HTMLCollection
     Element.parentNode; // получаем родителя
     Element.parentElement; // получаем родителя
     Element.firstChild;
