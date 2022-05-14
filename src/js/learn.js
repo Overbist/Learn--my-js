@@ -226,7 +226,7 @@ let tabMethods = function() {
     // Структура Очередь - Имитируем очередь.
     // Структура Стек - добавляем в конец и забираем с конца.
     // Методы push/pop выполняются быстро, а методы shift/unshift – медленно.
-    arr.push(); // добавляет элементы в конец
+    arr.push(); // добавляет элементы в конец - изменяет оригинальный массив
     arr.pop(); // извлекает элемент из конца
     arr.shift(); // извлекает элемент из начала и возращяет его
     arr.unshift(); // добавляет элементы в начало
@@ -234,7 +234,7 @@ let tabMethods = function() {
     arr.splice(str, 2, 2); // Умеет всё: добавлять, удалять и заменять элементы.
     arr.slice(3, 7); // возвращает массив, в который элементы, начиная с индекса start и до end (не включая end)
 
-    arr.concat(arr2); // Склеиваем два массива
+    arr.concat(arr2); // Склеиваем два массива - не изменяет оригинальный массив
     arr.indexOf(item, from); // Узнаем индекс элемента в массиве
     arr.lastIndexOf(item, from); // то же самое, но ищет справа налево.
     arr.includes(item, from); // ищет item, начиная с индекса from, и возвращает true, если поиск успешен.
@@ -324,7 +324,7 @@ let tabMethods = function() {
     Element.style.color = '#000'; // добавляем стили
     Element.style.cssText = 'width: 500px; height: 100px;'; // добавляем стили
 
-    Element.dataset; //
+    Element.dataset; // обращение к дата-атрибутам
     window.scrollBy(Х, Y); // Скрол от текущей позиции
     window.scrollTo(Х, Y); // Чтобы прокрутить страницу
     window.getComputedStyle; // получаем все стили, которые применяются к элементу
@@ -372,10 +372,15 @@ let tabMethods = function() {
         if (e == QUOTA_EXCEEDED_ERR) {
             alert('Превышен лимит');
         }
-    }   
+    }
+    
+    
+
+    // data-атрибуты
+    Element.innerHTML = Element.dataset.attribute;
 
 
-
+    
     /* Регулярки */
     new RegExp('patten', 'flag'); // /pattern/f
     const reg = /n/igm; //
@@ -416,6 +421,8 @@ let tabMethods = function() {
 
     // REACT
     setState({}); // Модифицируем состояние
+    componentDidMount(); // выполняется после того, как вывод компонента был отрендерен в DOM
+    componentWillUnmount(); // демонтирование
 };
 
 
@@ -682,11 +689,21 @@ let tabFundamental = function() {
 
 
     // addEventListener
-    
+    click; // клик левой кнопкой
+    contextmenu; // клик правой кнопкой мыши
+    mousover; // когда мышь наводится на элемент
+    mousout; //  когда мышь покидает элемент
+
+    submit;
+    focus;
     input;
     change; // когда уводим мышку с инпута
     readystatechange; // отслеживает статус готовности нашего запроса на данный момент
     load; //
+
+    keydown; // когда нажимает клавишу
+
+    DOMContentLoaded; // когда HTML загружен и обработан, DOM документа полностью построен и доступен.
 
     touchstart; // аналог клика для мобайла
     touchmove; // движение пальцем
@@ -703,9 +720,9 @@ let tabFundamental = function() {
     // Асинхронный код
     Element.addEventListener( 'click', (e) => {
         e.preventDefault();
-        //e.target // элемент по которому кликнули, если следили за списком
-        //e.target.remove();
-        //e.currentTarget;
+        e.target // элемент по которому кликнули, если следили за списком
+        e.target.remove();
+        e.currentTarget;
         Element.style.color = 'red';
     });
 
