@@ -69,11 +69,11 @@ const dataFaq = [
   },
   {
     category: "async-js",
-    question: `Что такое цикл событий (event loop) и как он работает?`,
+    question: `Подходы при работе с асинхронным кодом?`,
     answer: `
-      Представляет собой поток выполнения кода JavaScript. Event Loop выполняет одну простую задачу — осуществляет контроль стека вызовов и очереди обратных вызовов. Если стек вызовов пуст, цикл событий возьмет первое событие из очереди и отправит его в стек вызовов, который его запустит.
+      Callback, Promice, Async/Awaite
     `,
-    linkYoutube: `https://www.youtube.com/watch?v=w-vUj0gHGgg&t=293s`,
+    linkYoutube: `https://www.youtube.com/watch?v=yvOXvZ8aEFo&t=410s`,
   },
   {
     category: "async-js",
@@ -85,5 +85,14 @@ const dataFaq = [
     `,
     linkYoutube: `https://www.youtube.com/watch?v=G4iYlbilozM&t=371s`,
     linkMdn: `https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Using_promises`,
+    linkLearnJs: `https://learn.javascript.ru/promise-basics`,
+  },
+  {
+    category: "async-js",
+    question: `Что такое цикл событий (event loop) и как он работает?`,
+    answer: `
+      Представляет собой поток выполнения кода JavaScript. Event Loop выполняет одну простую задачу — осуществляет контроль стека вызовов и очереди обратных вызовов. Если стек вызовов пуст, цикл событий возьмет первое событие из очереди и отправит его в стек вызовов, который его запустит.
+    `,
+    linkYoutube: `https://www.youtube.com/watch?v=w-vUj0gHGgg&t=293s`,
   },
 ];
