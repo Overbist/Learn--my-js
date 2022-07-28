@@ -1,6 +1,4 @@
-const dataGlossary = [];
-
-const dataFaq = [
+export const faqData = [
   {
     category: "js",
     question: `Что такое замыкание функции?`,

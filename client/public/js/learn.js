@@ -1046,6 +1046,9 @@ importCodeInPage("#js-code-import-6", tabExampleTasks);
 // На прямую состояния менять не можем. Для этого используем setState()
 // Метод setState всегда запускает метод render()
 
+// Other commands
+// rm -r node_modules
+
 // TODO: создать страницу глосарий и фак с ответами
 // Стрелочные функции
 // Callback функции
