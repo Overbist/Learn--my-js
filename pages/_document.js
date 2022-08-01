@@ -1,9 +1,10 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-export const Document = () => {
+function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link href="/favicon/1.png" rel="shortcut icon" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
@@ -15,4 +16,6 @@ export const Document = () => {
       </body>
     </Html>
   );
-};
+}
+
+export default Document;
