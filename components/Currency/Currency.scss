@@ -1,0 +1,22 @@
+.currency {
+  max-width: 400px;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(175, 175, 175);
+    margin-bottom: -1px;
+
+    span {
+      font-size: 22px;
+      margin-right: 5px;
+    }
+  }
+
+  &__icon {
+    margin-right: 15px;
+    padding: 10px 15px;
+    background-color: var(--second);
+    font-size: 22px;
+  }
+}

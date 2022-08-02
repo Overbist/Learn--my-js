@@ -8,7 +8,7 @@ function Layout({ children }) {
       <main className="container inner">
         <section className="box bg">{children}</section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

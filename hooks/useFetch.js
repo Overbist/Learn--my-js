@@ -3,11 +3,11 @@ import axios from "axios";
 
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     axios
       .get(url)
       .then((response) => {
@@ -17,12 +17,12 @@ export const useFetch = (url) => {
         setError(err);
       })
       .finally(() => {
-        setLoading(false);
+        setIsLoading(false);
       });
   }, [url]);
 
   const refetch = () => {
-    setLoading(true);
+    setIsLoading(true);
     axios
       .get(url)
       .then((response) => {
@@ -32,9 +32,9 @@ export const useFetch = (url) => {
         setError(err);
       })
       .finally(() => {
-        setLoading(false);
+        setIsLoading(false);
       });
   };
 
-  return { data, loading, error, refetch };
+  return { data, isLoading, error, refetch };
 };

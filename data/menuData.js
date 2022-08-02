@@ -11,4 +11,8 @@ export const menuData = [
     name: "Exchange Rates",
     link: "exchange-rates",
   },
+  {
+    name: "FAQ",
+    link: "faq",
+  },
 ];

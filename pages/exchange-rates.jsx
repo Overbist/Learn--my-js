@@ -1,28 +1,21 @@
-import React from "react";
+import Head from "next/head";
+import Layout from "../components/layout/Layout";
+import Currency from "../components/Currency/Currency";
 
-function exchangeRates() {
-  /*======================================*/
-  // Exchange Rates
+function ExchangeRates() {
+  return (
+    <>
+      <Head>
+        <title>Exchange Rates</title>
+        <meta name="description" content="Exchange Rates Page" />
+      </Head>
 
-  async function getCurrencies() {
-    const url =
-      "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
-    const response = await fetch(url);
-    const data = await response.json();
-
-    const usdRate = data[26].rate.toFixed(2);
-    const eurRate = data[32].rate.toFixed(2);
-
-    const usdElement = document.querySelector("#usd");
-    const eurElement = document.querySelector("#eur");
-
-    usdElement.innerText = usdRate;
-    eurElement.innerText = eurRate;
-  }
-
-  getCurrencies();
-
-  return <div>exchange-rates</div>;
+      <Layout>
+        <h2>Курсы валют</h2>
+        <Currency />
+      </Layout>
+    </>
+  );
 }
 
-export default exchangeRates;
+export default ExchangeRates;

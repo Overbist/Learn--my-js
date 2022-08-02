@@ -1,10 +1,18 @@
-import React from "react";
+import Head from "next/head";
+import Layout from "../components/layout/Layout";
+import { AccordionTab } from "../components/ui/Accordion";
 
-export const faq = () => {
+const Faq = () => {
   return (
     <>
-      <div>faq</div>
-      console.log('test')
+      <Head>
+        <title>Faq</title>
+        <meta name="description" content="Faq Page" />
+      </Head>
+
+      <Layout>{/* <AccordionTab></AccordionTab> */}</Layout>
     </>
   );
 };
+
+export default Faq;

@@ -3,4 +3,7 @@
 // Pages
 
 // Components
-@import "../components/Header/Header.scss";
+@import "../components/layout/Header/Header";
+@import "../components/Currency/Currency";
+
+@import "./react-tabs.scss";

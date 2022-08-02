@@ -10,6 +10,7 @@
  * ------------------------------------------------------------ */
 :root {
   --accent: #10dd2b;
+  --second: #0c6e12;
   --text-color: white;
   --box-shadow: 0 0 1px #353f4f;
   --box-background: rgba(0, 0, 0, 0.2);
@@ -84,7 +85,7 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh - 72px);
 }
 
 .box {
@@ -103,6 +104,7 @@ ul {
  * 04. Content
  * ------------------------------------------------------------ */
 .title {
+  margin-bottom: 20px;
   text-align: center;
   font-size: calc(8px + 4vmin);
   text-shadow: var(--title-shadow);
@@ -110,7 +112,7 @@ ul {
 
 .desc {
   text-align: center;
-  font-size: calc(8px + 2vmin);
+  //font-size: calc(8px + 2vmin);
 }
 
 .btn {
@@ -155,89 +157,6 @@ body pre.prettyprint {
   background-color: rgba(0, 0, 0, 0.7);
   //text-shadow: none;
   //white-space: pre-wrap;
-}
-
-.tabs {
-  &__btns {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 60px;
-  }
-
-  &__btn {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 auto;
-    //width: calc((100% / 3) - 30px);
-    min-height: 60px;
-    padding: 5px 10px;
-    color: white;
-    text-align: center;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.2;
-    border-bottom: 1px solid #dbdbdb;
-    cursor: pointer;
-    transition: 0.8s;
-
-    &:hover {
-      color: var(--accent);
-    }
-
-    &--active {
-      color: var(--accent);
-
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: var(--accent);
-      }
-    }
-  }
-
-  &__content {
-    padding: 0 60px;
-  }
-
-  &__item {
-    display: none;
-    //overflow: visible;
-
-    &--show {
-      display: block;
-      visibility: visible;
-    }
-  }
-}
-
-.currency {
-  max-width: 400px;
-
-  &__row {
-    display: flex;
-    align-items: center;
-    border: 1px solid rgb(175, 175, 175);
-    margin-bottom: -1px;
-
-    span {
-      font-size: 22px;
-      margin-right: 10px;
-    }
-  }
-
-  &__icon {
-    margin-right: 15px;
-    padding: 10px 15px;
-    background-color: #e3e3e3;
-    font-size: 22px;
-  }
 }
 
 @media (max-width: 480px) {

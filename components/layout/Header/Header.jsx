@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { v4 as uuid } from "uuid";
 import { menuData } from "../../../data/menuData";
 
 function Header() {
@@ -8,7 +9,7 @@ function Header() {
         <nav className="header__menu">
           {menuData.map((menuItem) => {
             return (
-              <Link href={menuItem.link} key={Date.now()}>
+              <Link href={menuItem.link} key={uuid()}>
                 <a className="header__menuItem">{menuItem.name}</a>
               </Link>
             );

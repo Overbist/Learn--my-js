@@ -1,34 +1,24 @@
-import React from 'react'
-//import './Tabs.css'
+function Tabs() {
+  const buttonsWrapper = document.querySelector(".tabs__btns");
+  const contentWrapper = document.querySelector(".tabs__content");
 
-const Tabs = (props) => {
-  const {links, initial} = props
-  const [tab, setTab] = React.useState(initial)
-  const linksrow = links?.map(link=> {
-    return (
-      <div onClick={()=> setTab(link.link)} className={`tablink ${tab === link.link?'activetablink':''}`}>
-        {link.title}
-      </div>
-    )
-  })
-  const tabs = links?.map(tabc=> {
-    if(tab === tabc.link) {
-      return (
-        <div className="tabcont">
-          {tabc.content}
-        </div>
-      )
-    }
-  })
-  return (
-    <div className="tabs flex">
-      <div className="tablinks flexrow">
-        {linksrow}
-      </div>
-      <div className="tabs">
-        {tabs}
-      </div>
-    </div>
-  )
+  buttonsWrapper.addEventListener("click", (event) => {
+    let clickedBtn = event.target;
+    let index = clickedBtn.dataset.value;
+
+    buttonsWrapper
+      .querySelector(".tabs__btn--active")
+      .classList.remove("tabs__btn--active");
+    clickedBtn.classList.add("tabs__btn--active");
+
+    contentWrapper
+      .querySelector(".tabs__item--show")
+      .classList.remove("tabs__item--show");
+    contentWrapper
+      .querySelector(`.tabs__item[data-tab="${index}"]`)
+      .classList.add("tabs__item--show");
+    //contentWrapper.querySelector(`.tab--${index}`).classList.add('tabs__item--active');
+  });
 }
-export default Tabs
+
+export default Tabs;
