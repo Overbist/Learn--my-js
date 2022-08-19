@@ -1,7 +1,43 @@
-import Head from "next/head";
-import Layout from "../components/layout/Layout";
+import Head from "next/head"
+
+import { Layout } from "@components/layout/Layout"
 
 function Home() {
+  const strArr = ["apple", "banana", "peach", "orange", "melon"]
+  const numArr = [1, 2, 34, 4, 7, 2, 43, 4, 7, 8, 9, 1, 56, 3, 2]
+
+  // Оставляем только не повторяющиеся цифры
+  let newNumArr = numArr.filter((number, index) => {
+    return numArr.indexOf(number) === index
+  })
+
+  // Сортируем цифры в порядке возрастания
+  numArr.sort((a, b) => a - b)
+
+  // Сумма всех чисел
+  let total = numArr.reduce((sum, number) => {
+    return sum + number
+  }, 0)
+
+  // Создадим объект и присвоим всем элементам значение
+  let fruits = strArr.reduce((acc, element) => {
+    acc[element] = 1
+    return acc
+  }, {})
+
+  // Делаем первую букву заглавной
+  const camelize = (str) => {
+    return str
+      .split(" ")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" ")
+  }
+
+  // Нужно получить отсортированную копию, но оставить arr неизмененным.
+  const copySorted = (arr) => {
+    return arr.slice().sort()
+  }
+
   return (
     <>
       <Head>
@@ -12,15 +48,14 @@ function Home() {
       <Layout>
         <h1 className="title">Best of the best</h1>
         <p className="desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius,
-          repellat fugiat obcaecati hic ipsum nam quasi? Aliquid, porro commodi
-          laboriosam molestiae veniam, numquam sapiente laudantium natus placeat
-          eius veritatis.Lorem ipsum dolor sit amet consectetur adipisicing
-          elit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius, repellat fugiat
+          obcaecati hic ipsum nam quasi? Aliquid, porro commodi laboriosam molestiae veniam, numquam
+          sapiente laudantium natus placeat eius veritatis.Lorem ipsum dolor sit amet consectetur
+          adipisicing elit.
         </p>
       </Layout>
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home

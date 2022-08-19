@@ -8,11 +8,15 @@ export const menuData = [
     link: "examples",
   },
   {
+    name: "Вопросы на собеседовании",
+    link: "faq",
+    submenu: {
+      name: "Вопросы на собеседовании",
+      link: "faq",
+    },
+  },
+  {
     name: "Exchange Rates",
     link: "exchange-rates",
   },
-  {
-    name: "FAQ",
-    link: "faq",
-  },
-];
+]

@@ -1,16 +1,14 @@
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
+import { Footer } from "./Footer/Footer"
+import { Header } from "./Header/Header"
 
-function Layout({ children }) {
+export function Layout({ children, pageClassName }) {
   return (
     <>
       <Header />
-      <main className="container inner">
-        <section className="box bg">{children}</section>
+      <main className="container">
+        <section className={`${pageClassName} box bg`}>{children}</section>
       </main>
       {/* <Footer /> */}
     </>
-  );
+  )
 }
-
-export default Layout;

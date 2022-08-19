@@ -1,9 +1,17 @@
 @import "global";
 
 // Pages
+@import "./page-faq";
 
 // Components
-@import "../components/layout/Header/Header";
+@import "../components/Preloader/Preloader";
 @import "../components/Currency/Currency";
 
+// Components - Layout
+@import "../components/layout/Header/Header";
+
+// Components - UI
+@import "../components/ui/Accordion/Accordion";
+
+// third party Components
 @import "./react-tabs.scss";

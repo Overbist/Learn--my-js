@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Layout from "../components/layout/Layout";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+
+import { Layout } from "@components/layout/Layout";
 
 function Examples() {
   return (

@@ -1,0 +1,14 @@
+.faq {
+  &__category {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__catTitle {
+    margin-inline-start: 20px;
+    margin-bottom: 10px;
+  }
+}

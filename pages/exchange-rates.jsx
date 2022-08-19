@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Layout from "../components/layout/Layout";
-import Currency from "../components/Currency/Currency";
+
+import { Currency } from "@components/Currency/Currency";
+import { Layout } from "@components/layout/Layout";
 
 function ExchangeRates() {
   return (

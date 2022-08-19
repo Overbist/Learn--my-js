@@ -1,13 +1,13 @@
-import { useEffect, useState, useRef } from "react";
-import { useFetch } from "../../hooks/useFetch";
+import { useEffect, useRef, useState } from "react";
 
-function Currency() {
+import { useFetch } from "@hooks/useFetch";
+
+export function Currency() {
   const [usdRate, setUsdRate] = useState(0);
   const [eurRate, setEurRate] = useState(0);
+  const API_URL = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json";
 
-  const { data, isLoading, error, refetch } = useFetch(
-    "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
-  );
+  const { data, isLoading, error, refetch } = useFetch(API_URL);
 
   useEffect(() => {
     if (data) {
@@ -39,5 +39,3 @@ function Currency() {
     </div>
   );
 }
-
-export default Currency;

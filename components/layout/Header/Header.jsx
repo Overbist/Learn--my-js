@@ -1,8 +1,10 @@
-import Link from "next/link";
-import { v4 as uuid } from "uuid";
-import { menuData } from "../../../data/menuData";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { v4 as uuid } from "uuid"
 
-function Header() {
+import { menuData } from "@data/menuData"
+
+export function Header() {
   return (
     <header className="header bg">
       <div className="header__inner container">
@@ -12,12 +14,10 @@ function Header() {
               <Link href={menuItem.link} key={uuid()}>
                 <a className="header__menuItem">{menuItem.name}</a>
               </Link>
-            );
+            )
           })}
         </nav>
       </div>
     </header>
-  );
+  )
 }
-
-export default Header;
