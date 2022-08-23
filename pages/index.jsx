@@ -11,6 +11,11 @@ function Home() {
     return numArr.indexOf(number) === index
   })
 
+  // Создайте функцию unique(arr), которая вернёт массив уникальных, не повторяющихся значений массива arr.
+  function unique(arr) {
+    return Array.from(new Set(arr))
+  }
+
   // Сортируем цифры в порядке возрастания
   numArr.sort((a, b) => a - b)
 
@@ -18,6 +23,15 @@ function Home() {
   let total = numArr.reduce((sum, number) => {
     return sum + number
   }, 0)
+
+  // Сумма свойств объекта
+  let salaries = {
+    John: 100,
+    Pete: 300,
+  }
+  function sumSalaries(salaries) {
+    return Object.values(salaries).reduce((a, b) => a + b, 0) // 400
+  }
 
   // Создадим объект и присвоим всем элементам значение
   let fruits = strArr.reduce((acc, element) => {
@@ -37,6 +51,24 @@ function Home() {
   const copySorted = (arr) => {
     return arr.slice().sort()
   }
+
+  // Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку в обратном порядке.
+  const someString = "This is some strange string"
+  function reverse(str) {
+    return str.split("").reverse().join("")
+  }
+
+  // Числа Фибоначчи
+  function fib(n) {
+    let a = 1
+    let b = 1
+    for (let i = 3; i <= n; i++) {
+      let c = a + b
+      a = b
+      b = c
+    }
+    return b
+  } // или с помощью рекурсии, но такое решение будет работать долго.
 
   return (
     <>

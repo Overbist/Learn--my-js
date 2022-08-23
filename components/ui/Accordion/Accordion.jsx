@@ -1,23 +1,18 @@
 import { useState } from "react"
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai"
 
-export function Accordion({ item, index }) {
-  const [selected, setSelected] = useState(null)
-  const isSelected = selected === index
+export function Accordion({ item }) {
+  const [isSelected, setIsSelected] = useState(false)
 
-  const toggle = (i) => {
-    if (selected === i) {
-      return setSelected(null)
-    }
-
-    return setSelected(i)
+  function toggle() {
+    setIsSelected((isSelected) => !isSelected)
   }
 
   return (
     <div className="accordion">
       <h3
         className={`accordion__title ${isSelected ? "accordion__title--open" : ""}`}
-        onClick={() => toggle(index)}
+        onClick={toggle}
       >
         {item.question}
         <span className="accordion__icon">

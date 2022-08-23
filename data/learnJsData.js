@@ -134,7 +134,7 @@ let tabBasicInfo = function () {
   // область видимости
   // Рекурсия - это когда функция вызывает сама себя внутри
   // <script defer src="main.js"></script> // defer -для загрузки скрипта в фоновом режиме
-  // <script async src="main.js"></script> // async -для загрузки скрипта в фоновом режиме. Но неждет никого
+  // <script async src="main.js"></script> // async -для загрузки скрипта в фоновом режиме. Но не ждет никого
 
   // Интерполяция `текст ${let}`
   // Динамическая типизация
@@ -210,15 +210,16 @@ let tabMethods = function () {
   str.startWith("abc") // проверяем начинается ли строка на abc
   str.endsWith("abc") // проверяем заканчивается ли строка на abc
   str.repeat(3) //повторяем строку
-  str.trim() // очищяем пробелы в начале и конце строки
-  str.trimLeft() // очищяем пробелы
-  str.trimRight() // очищяем пробелы
+  str.trim() // очищаем пробелы в начале и конце строки
+  str.trimLeft() // очищаем пробелы
+  str.trimRight() // очищаем пробелы
   str.slice(2, 5) // вырезаем строку
   str.slice(2) // вырезаем строку до конца
   str.slice(-5, -1) // вырезаем строку с конца
-  str.substring(2, 5) // вырезаем строку, но без отрецательных значений
+  str.substring(2, 5) // вырезаем строку, но без отрицательных значений
   str.substr(2, 5) // вырезаем строку, второе значение сколько вырезать
   str.replace("", "") // заменяем символы, можно регуляркой
+  str.search() // ищет строку для указанного значения и возвращает позицию совпадения.
 
   str[2] // r
 
@@ -233,7 +234,7 @@ let tabMethods = function () {
   // Методы push/pop выполняются быстро, а методы shift/unshift – медленно.
   arr.push(...items) // добавляет элементы в конец - изменяет оригинальный массив
   arr.pop() // извлекает элемент из конца
-  arr.shift() // извлекает элемент из начала и возращяет его
+  arr.shift() // извлекает элемент из начала и возвращает его
   arr.unshift(...items) // добавляет элементы в начало
 
   arr.splice(pos, deleteCount, ...items) // Умеет всё: добавлять, удалять и заменять элементы.
@@ -248,7 +249,7 @@ let tabMethods = function () {
   arr.join("delim") // Объединить элементы массива в строку
   str.split("delim") // разбивает строку на массив по заданному разделителю delim
 
-  arr.map((item) => item.toLowerCase()) // метод map возращяет новый масив
+  arr.map((item) => item.toLowerCase()) // метод map возвращает новый масив
   arr.some((item) => typeof item === "number") // если в масиве хоть одно совпадение и выводит true or false
   arr.every((item) => typeof item === "number") // если в масиве все совпадают выводит true
   arr.sort((a, b) => b - a) // Сортирует как строки. Копия массива не создаётся!!!
@@ -259,20 +260,12 @@ let tabMethods = function () {
   arr.findIndex() //
   arr.filter((name) => {
     return name.length < 5
-  }) // фильтрует елементы внутри массива. И возращяет новый масив.
+  }) // фильтрует элементы внутри массива. И возвращает новый масив.
 
-  arr.reduce((sum, current) => sum + current) // собирать масив в одно эдиное целое. Метод перебора возращяет новый масив.
+  arr.reduce((sum, current) => sum + current) // собирать масив в одно единое целое. Метод перебора возвращает новый масив.
   arr.reduceRight() //
 
-  new Map() // – создаёт коллекцию.
-  map.set(key, value) // – записывает по ключу key значение value.
-  map.get(key) // – возвращает значение по ключу или undefined, если ключ key отсутствует.
-  map.has(key) // – возвращает true, если ключ key присутствует в коллекции, иначе false.
-  map.delete(key) // – удаляет элемент по ключу key.
-  map.clear() // – очищает коллекцию от всех элементов.
-  map.size // – возвращает текущее количество элементов.
-
-  // переберает масив, но не возращяет его
+  // перебирает масив, но не возвращает его
   arr.forEach() // позволяет запускать функцию для каждого элемента массива
   arr.forEach(alert) // выведет на экран каждый элемент массива
 
@@ -286,6 +279,19 @@ let tabMethods = function () {
   arr[0] = "value"
   delete arr[0] // удаляет первый элемент
 
+  // Map – это коллекция ключ/значение, как и Object.
+  // Но основное отличие в том, что Map позволяет использовать ключи любого типа.
+  new Map() // – создаёт коллекцию.
+  map.set(key, value) // – записывает по ключу key значение value.
+  map.get(key) // – возвращает значение по ключу или undefined, если ключ key отсутствует.
+  map.has(key) // – возвращает true, если ключ key присутствует в коллекции, иначе false.
+  map.delete(key) // – удаляет элемент по ключу key.
+  map.clear() // – очищает коллекцию от всех элементов.
+  map.size // – возвращает текущее количество элементов.
+  map.keys() // возвращает итерируемый объект по ключам,
+  map.values() // возвращает итерируемый объект по значениям,
+  map.entries() // возвращает итерируемый объект по парам вида [ключ, значение], этот вариант используется по умолчанию в for..of.
+
   // Запись объекта со всеми свойствами в фигурных скобках, называется литералом объекта. Если необходимо создать объект с помощью литерала, вам просто нужно использовать фигурные скобки. И если у объекта есть какие-то свойства, записать их внутри этих скобок.
   // Как вы уже знаете, при обращении массив[индекс] мы получаем элемент массива. В нашем случае это объект игрока, из которого можно читать, как из любого другого объекта через точку. Поэтому запись в теле нашего цикла массив[индекс].ключ то же самое, что запись объект.ключ при работе с объектом напрямую.
   obj.name = 12345 // Добавляем свойства в объект
@@ -296,14 +302,15 @@ let tabMethods = function () {
   const jonh = Object.create(soldier) // задает прототип
 
   Object.assign(obj, newObj)
-  Object.keys(obj) // Получаем масив со всеми ключами объекта
-  Object.keys(obj).length // Получаем количество елементов в объекте
   Object.is(NaN, NaN) === true // специальный метод Object.is, который сравнивает значения примерно как ===
   Object.setPrototypeOf(childObj, mainObj) // устанавливаем прототип доч. объекту
-  Object.entries(obj) // Возращяет масив с объекта
+  Object.keys(obj).length // Возвращает количество элементов в объекте
+  Object.keys(obj) // Возвращает массив ключей.
+  Object.entries(obj) // Возвращает массив пар [ключ, значение].
+  Object.values(obj) // Возвращает массив значений перечисляемых свойств объекта в том же порядке что и цикл for...in. Разница между циклом и методом в том, что цикл перечисляет свойства и из цепочки прототипов.
 
   // All Methods
-  document.querySelector(".header") // поиск селектора. Возращяет первый найденный. NodeList
+  document.querySelector(".header") // поиск селектора. Возвращает первый найденный. NodeList
   document.querySelectorAll(".header") // поиска селектора // forEach(item => item.style.color = 'red')
   document.getElementById("id") // он может быть вызван только на всём документе.
   document.createElement("имя тега")
@@ -320,9 +327,9 @@ let tabMethods = function () {
   Element.appendChild() // добавляет элемент в конец элемента-родителя. Работает только с узлами
   Element.append(добавляемый - элемент) // добавляет элемент в конец элемента-родителя.
   Element.prepend(добавляемый - элемент) // добавляет элемент в начало элемента-родителя.
-  Element.remove() // удаляем елемент
-  Element.replaceWith(element) // заменяем елемент
-  Element.cloneNode(true) // копируем елемент. Без true копирует без содержиможно
+  Element.remove() // удаляем элемент
+  Element.replaceWith(element) // заменяем элемент
+  Element.cloneNode(true) // копируем элемент. Без true копирует без содержимого
   Element.closest() // возвращает ближайший родительский элемент (или сам элемент)
   Element.children // children[0] возвращает коллекцию вложенных, DOM-элементов. Динамическая. HTMLCollection
   Element.parentNode // получаем родителя
@@ -339,10 +346,10 @@ let tabMethods = function () {
   window.scrollTo(Х, Y) // Чтобы прокрутить страницу
   window.getComputedStyle // получаем все стили, которые применяются к элементу
 
-  password.type = "text" // Превращяем инпут с паролем в текстовое поле
+  password.type = "text" // Превращаем инпут с паролем в текстовое поле
 
   // JSON
-  JSON.stringify(obj) // Превращяем объект в json формат
+  JSON.stringify(obj) // Превращаем объект в json формат
   JSON.parse(json) // Получаем объект с json
   Response.json() //
 
@@ -364,8 +371,8 @@ let tabMethods = function () {
   // localStorage https://tproger.ru/articles/localstorage/
   localStorage.setItem("number", 5) // Записываем
   localStorage.getItem("number") // Получаем
-  localStorage.removeItem("number") // удаляем ключь с значением
-  localStorage.clear() // Очищяем localStorage
+  localStorage.removeItem("number") // удаляем ключ с значением
+  localStorage.clear() // очищаем localStorage
 
   localStorage["Ключ"] = "Значение" //установка значения
   localStorage["Ключ"] // Получение значения
@@ -387,7 +394,7 @@ let tabMethods = function () {
   const ans = prompt("Введите данные...")
 
   reg.test(ans) //
-  ans.match(reg) // ищем совпадения и возращяем в массиве.
+  ans.match(reg) // ищем совпадения и возвращаем в массиве.
   ans.search(reg) //
   ans.replace(reg, "") // заменяем символы, можно регуляркой
 
@@ -411,13 +418,14 @@ let tabMethods = function () {
   now.getHours() // Получаем день часы
   now.getUTCHours() // Получаем день часы по UTC
   now.getTimezoneOffset() // разница между часовым поясом и UTC
-  now.getTime() // Возращяет таймШтамп. Секунд с 1970года.
+  now.getTime() // Возвращает таймШтамп. Секунд с 1970года.
 
   now.setHours(18) // устанавливаем часы
 
   // REACT
   setState({}) // Модифицируем состояние
   componentDidMount() // выполняется после того, как вывод компонента был отрендерен в DOM
+  componentDidUpdate() // метод, который вызывается при обновлении и перерисовке компоненты.
   componentWillUnmount() // демонтирование
 
   useState()
@@ -429,6 +437,10 @@ let tabMethods = function () {
   useDebugValue()
   useReducer()
   useContext()
+
+  React.memo() //  это компонент высшего порядка. Аналог PureComponent
+  React.PureComponent // реализует его поверхностным сравнением пропсов и состояния.
+  // Самое главное отличие между useMemo и memo. Это то что первый является hook-ом, а второй HOC-ом, а именно Higher-Order Component или же Компонент Высшего Порядка.
 }
 
 // Property

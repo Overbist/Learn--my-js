@@ -8,6 +8,19 @@ export const faqData = [
   },
   {
     category: "JavaScript",
+    question: `Что такое Рекурсия?`,
+    answer: `Рекурсия - это когда функция вызывает сама себя внутри.
+
+    Когда функция вызывает саму себя, это называется шагом рекурсии. 
+    База рекурсии – это такие аргументы функции, которые делают задачу настолько простой, что решение не требует дальнейших вложенных вызовов.`,
+    example: `
+      function fib(n) {
+        return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+      }`,
+    linkYoutube: `https://www.youtube.com/watch?v=nvktMVFM0_M&t=125s`,
+  },
+  {
+    category: "JavaScript",
     question: `Как клонировать объект?`,
     answer: `Для «простого клонирования» объекта можно использовать Object.assign. Необходимо помнить, что Object.assign не делает глубокое клонирование объекта. Если внутри копируемого объекта есть свойство, значение которого не является примитивом, оно будет передано по ссылке. 
       
@@ -96,6 +109,14 @@ export const faqData = [
   },
   {
     category: "Async-JS",
+    question: `Что такое цикл событий и как он работает? [Event Loop]`,
+    answer: `
+      Представляет собой поток выполнения кода JavaScript. Event Loop выполняет одну простую задачу — осуществляет контроль стека вызовов и очереди обратных вызовов. Если стек вызовов пуст, цикл событий возьмет первое событие из очереди и отправит его в стек вызовов, который его запустит.
+    `,
+    linkYoutube: `https://www.youtube.com/watch?v=w-vUj0gHGgg&t=293s`,
+  },
+  {
+    category: "Async-JS",
     question: `Разница между синхронными и асинхронными функциями?`,
     answer: `
       Синхронные функции являются блокирующими, в то время как асинхронные нет.
@@ -142,14 +163,6 @@ export const faqData = [
     linkYoutube: `https://www.youtube.com/watch?v=G4iYlbilozM&t=371s`,
     linkMdn: `https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Using_promises`,
     linkLearnJs: `https://learn.javascript.ru/promise-basics`,
-  },
-  {
-    category: "Async-JS",
-    question: `Что такое цикл событий (event loop) и как он работает?`,
-    answer: `
-      Представляет собой поток выполнения кода JavaScript. Event Loop выполняет одну простую задачу — осуществляет контроль стека вызовов и очереди обратных вызовов. Если стек вызовов пуст, цикл событий возьмет первое событие из очереди и отправит его в стек вызовов, который его запустит.
-    `,
-    linkYoutube: `https://www.youtube.com/watch?v=w-vUj0gHGgg&t=293s`,
   },
   {
     category: "Async-JS",
@@ -224,9 +237,8 @@ export const faqData = [
   {
     category: "TypeScript",
     question: `Что такое обобщённые типы (Generics)`,
-    answer: `Обобщённый тип (обобщение, дженерик) позволяет резервировать место для типа, который будет заменён на конкретный, переданный пользователем, при вызове функции или метода, а также при работе с классами.`,
-    example: `
-      const getArray = <T>(items: T[]): T[] => [...items]
+    answer: `Дженерик позволяет резервировать место для типа, который будет заменён на конкретный, переданный пользователем, при вызове функции или метода, а также при работе с классами.`,
+    example: `const getArray = <T>(items: T[]): T[] => [...items]
 
       const numArr = getArray<number>([1, 2, 3])
       const names = getArray<string>(["Ihor", "Elena"])
@@ -234,8 +246,17 @@ export const faqData = [
   },
   {
     category: "React",
+    question: `Что такое PureComponent?`,
+    answer: `В React.PureComponent реализован метод жизненного цикла shouldComponentUpdate(), отвечающий за проверку, нужно ли производить перерисовку компонента или нет. 
+    
+    Он производит поверхностное сравнение пропов и состояния компонента с предыдущими, чтобы понять, изменились ли они, и перерисовка происходит только в случае нахождения различий.`,
+    linkYoutube: `https://www.youtube.com/watch?v=yvOXvZ8aEFo&t=581s`,
+  },
+  {
+    category: "React",
     question: `Что такое Компонент высшего порядка (Higher-Order Component / HOC)?`,
-    answer: `Патерн. Техника переиспользования компонентной логики.`,
+    answer: `Патерн. Техника переиспользования компонентной логики.
+    Говоря просто, компонент высшего порядка — это функция, которая принимает компонент и возвращает новый компонент.`,
     linkYoutube: `https://www.youtube.com/watch?v=yvOXvZ8aEFo&t=637s`,
   },
 ]

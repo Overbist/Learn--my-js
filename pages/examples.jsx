@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import Head from "next/head"
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
 
-import { Layout } from "@components/layout/Layout";
+import { Layout } from "@components/layout/Layout"
 
 function Examples() {
   return (
@@ -55,7 +55,7 @@ function Examples() {
         </Tabs>
       </Layout>
     </>
-  );
+  )
 }
 
-export default Examples;
+export default Examples

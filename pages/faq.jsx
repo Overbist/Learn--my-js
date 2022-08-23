@@ -28,27 +28,16 @@ function Faq() {
       <Layout pageClassName="faq">
         <h1 className="faq__title title title--center">Вопросы на собеседовании</h1>
 
-        {categories.map((category) => {
-          return (
-            <>
-              <div className="faq__category">
-                <h2 className="faq__catTitle">{category}</h2>
-                {faqData.map((item, index) => {
-                  if (item.category === category) {
-                    return <Accordion item={item} index={index} key={uuid()} />
-                  }
-                })}
-              </div>
-            </>
-          )
-        })}
-
-        {/* <h2 className="faq__category">TS</h2>
-        {faqData.map((item, index) => {
-          if (item.category === "ts") {
-            return <Accordion item={item} index={index} key={uuid()} />
-          }
-        })} */}
+        {categories.map((category) => (
+          <div className="faq__category" key={uuid()}>
+            <h2 className="faq__catTitle">{category}</h2>
+            {faqData.map((item) => {
+              if (item.category === category) {
+                return <Accordion item={item} key={uuid()} />
+              }
+            })}
+          </div>
+        ))}
       </Layout>
     </>
   )

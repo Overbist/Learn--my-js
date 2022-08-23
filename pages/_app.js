@@ -1,10 +1,10 @@
 //import { useRouter } from "next/router";
 //import { useEffect, useState } from "react";
 //import { Preloader } from "@components/Preloader/Preloader";
-import "../styles/style.scss";
+import "../styles/style.scss"
 
 function MyApp(appProps) {
-  const { Component, pageProps } = appProps;
+  const { Component, pageProps } = appProps
 
   // const [loading, setLoading] = useState(false);
   // const router = useRouter();
@@ -24,7 +24,7 @@ function MyApp(appProps) {
       {/* {loading && <Preloader />} */}
       <Component {...pageProps} />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
