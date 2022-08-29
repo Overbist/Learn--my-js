@@ -7,6 +7,8 @@ import { Accordion } from "@components/ui/Accordion/Accordion"
 import { faqData } from "@data/faqData"
 
 function Faq() {
+  const categories = getCategory(faqData)
+
   function getCategory(data) {
     const categoryAll = data.map((item) => item.category)
     const categoryFiltered = categoryAll.filter((item, index) => {
@@ -15,8 +17,6 @@ function Faq() {
 
     return categoryFiltered
   }
-
-  const categories = getCategory(faqData)
 
   return (
     <>

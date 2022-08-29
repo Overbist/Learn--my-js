@@ -4,11 +4,11 @@ export const menuData = [
     link: "/",
   },
   {
-    name: "Examples",
-    link: "examples",
+    name: "JSHints",
+    link: "jshints",
   },
   {
-    name: "Вопросы на собеседовании",
+    name: "FAQ",
     link: "faq",
     submenu: {
       name: "Вопросы на собеседовании",
@@ -16,7 +16,11 @@ export const menuData = [
     },
   },
   {
-    name: "Exchange Rates",
-    link: "exchange-rates",
+    name: "Tasks",
+    link: "tasks",
   },
+  // {
+  //   name: "Exchange Rates",
+  //   link: "exchange-rates",
+  // },
 ]

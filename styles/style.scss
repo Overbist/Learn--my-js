@@ -2,10 +2,12 @@
 
 // Pages
 @import "./page-faq";
+@import "./page-tasks";
 
 // Components
 @import "../components/Preloader/Preloader";
 @import "../components/Currency/Currency";
+@import "../components/CodeHighlighter/CodeHighlighter";
 
 // Components - Layout
 @import "../components/layout/Header/Header";

@@ -117,7 +117,7 @@ let personalMovieDB = {
 }
 
 /* === Базовые знания === */
-let tabBasicInfo = function () {
+export const tabBasicInfo = function () {
   /*
    *  1. Number // ±(253-1)
    *  2. bigint
@@ -167,7 +167,7 @@ let tabBasicInfo = function () {
 }
 
 /* ========= Methods ========= */
-let tabMethods = function () {
+export const tabMethods = function () {
   // Numbers
   // В JavaScript встроен объект Math, который содержит различные математические функции и константы.
   // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
@@ -444,7 +444,7 @@ let tabMethods = function () {
 }
 
 // Property
-let tabPropertys = function () {
+let tabProperty = function () {
   str.length // Свойство содержит длину строки
   arr.length // Свойство содержит длину массива
   textContent // Получаем текстовое содержимое
@@ -599,14 +599,14 @@ let tabFundamental = function () {
   arr.sort(compareNum)
 
   // Function Expression
-  let log = function () {
+  let log = (function () {
     console.log("Function Expression")
-  }
-
-  // Самовызывающаяся функция IIFE
-  ;(function seyHi() {
-    console.log("Самовызывающаяся функция")
-  })()
+  })(
+    // Самовызывающаяся функция IIFE
+    function seyHi() {
+      console.log("Самовызывающаяся функция")
+    }
+  )()
 
   // ==================================== //
   // ======== Геттеры и сеттеры ========= //
@@ -864,7 +864,7 @@ let tabExampleTasks = function () {
     }
   }
 
-  function revers(number) {
+  function reversNumber(number) {
     number += ""
     let reversNumber = ""
     for (let i = number.length - 1; i >= 0; i--) {
@@ -1026,17 +1026,17 @@ let tabExampleTasks = function () {
   console.log(median)
 }
 
-function importCodeInPage(selectorName, importedCode) {
-  let codeSelector = document.querySelector(selectorName)
-  codeSelector.textContent = importedCode
-}
+// function importCodeInPage(selectorName, importedCode) {
+//   let codeSelector = document.querySelector(selectorName)
+//   codeSelector.textContent = importedCode
+// }
 
-importCodeInPage("#js-code-import-1", tabBasicInfo)
-importCodeInPage("#js-code-import-2", tabMethods)
-importCodeInPage("#js-code-import-3", tabPropertys)
-importCodeInPage("#js-code-import-4", tabFundamental)
-importCodeInPage("#js-code-import-5", tabReactExample)
-importCodeInPage("#js-code-import-6", tabExampleTasks)
+// importCodeInPage("#js-code-import-1", tabBasicInfo)
+// importCodeInPage("#js-code-import-2", tabMethods)
+// importCodeInPage("#js-code-import-3", tabPropertys)
+// importCodeInPage("#js-code-import-4", tabFundamental)
+// importCodeInPage("#js-code-import-5", tabReactExample)
+// importCodeInPage("#js-code-import-6", tabExampleTasks)
 
 // https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
 // Ctrl + ~ - открыть терминал

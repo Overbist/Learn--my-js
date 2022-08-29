@@ -75,7 +75,7 @@ ul {
  * ------------------------------------------------------------ */
 .container {
   width: 100%;
-  max-width: calc(1160px + 40px);
+  max-width: calc(1240px + 40px);
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
@@ -107,6 +107,17 @@ ul {
 .title {
   margin-bottom: 32px;
   font-size: calc(8px + 4vmin);
+  text-shadow: var(--title-shadow);
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.titleSecond {
+  margin-top: 50px;
+  margin-bottom: 24px;
+  font-size: calc(7px + 2vmin);
   text-shadow: var(--title-shadow);
 
   &--center {
