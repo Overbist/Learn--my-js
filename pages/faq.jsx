@@ -1,8 +1,9 @@
 import Head from "next/head"
 import { v4 as uuid } from "uuid"
 
-import { Layout } from "@components/layout/Layout"
 import { Accordion } from "@components/ui/Accordion/Accordion"
+
+import { Layout } from "@layout/Layout"
 
 import { faqData } from "@data/faqData"
 

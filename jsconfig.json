@@ -5,6 +5,7 @@
       "@components/*": ["components/*"],
       "@providers/*": ["providers/*"],
       "@services/*": ["services/*"],
+      "@layout/*": ["layout/*"],
       "@assets/*": ["assets/*"],
       "@hooks/*": ["hooks/*"],
       "@data/*": ["data/*"]

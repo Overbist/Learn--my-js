@@ -4,16 +4,16 @@
 @import "./page-faq";
 @import "./page-tasks";
 
-// Components
-@import "../components/Preloader/Preloader";
-@import "../components/Currency/Currency";
-@import "../components/CodeHighlighter/CodeHighlighter";
+// Layout
+@import "@layout/Header/Header";
 
-// Components - Layout
-@import "../components/layout/Header/Header";
+// Components
+@import "@components/Preloader/Preloader";
+@import "@components/Currency/Currency";
+@import "@components/CodeHighlighter/CodeHighlighter";
 
 // Components - UI
-@import "../components/ui/Accordion/Accordion";
+@import "@components/ui/Accordion/Accordion";
 
 // third party Components
 @import "./react-tabs.scss";

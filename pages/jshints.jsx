@@ -2,7 +2,8 @@ import Head from "next/head"
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs"
 
 import { CodeHighlighter } from "@components/CodeHighlighter/CodeHighlighter"
-import { Layout } from "@components/layout/Layout"
+
+import { Layout } from "@layout/Layout"
 
 import { jsHintsData } from "@data/jsHintsData"
 
@@ -10,8 +11,8 @@ function JSHints() {
   return (
     <>
       <Head>
-        <title>JavaScript</title>
-        <meta name="description" content="Examples Page" />
+        <title>JavaScript Hints</title>
+        <meta name="description" content="JSHints" />
       </Head>
 
       <Layout>

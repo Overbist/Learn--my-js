@@ -3,7 +3,8 @@ import { Fragment } from "react"
 import { v4 as uuid } from "uuid"
 
 import { CodeHighlighter } from "@components/CodeHighlighter/CodeHighlighter"
-import { Layout } from "@components/layout/Layout"
+
+import { Layout } from "@layout/Layout"
 
 import { tasksData } from "@data/tasksData"
 

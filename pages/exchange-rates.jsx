@@ -1,7 +1,8 @@
 import Head from "next/head"
 
 import { Currency } from "@components/Currency/Currency"
-import { Layout } from "@components/layout/Layout"
+
+import { Layout } from "@layout/Layout"
 
 function ExchangeRates() {
   return (

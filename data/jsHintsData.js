@@ -699,7 +699,11 @@ btn.addEventListener("click", () => requestAnimationFrame(myAnimation))
 let id = requestAnimationFrame(myAnimation)
 cancelAnimationFrame(id)
   `,
-  tabReactExample: `
-// <Fragment>html</Fragment> || <>html</>
+  tabReactExample: `// <Fragment>html</Fragment> || <>html</>`,
+  tabTypeScript: `export function CompName(): JSX.Element {}
+
+const [myState, setMyState] = useState<boolean>(false);
+const [myCount, setMyCount] = useState<number>(1);
+const [myObject, setMyObject] = useState<{a?: number}>({});
   `,
 }
